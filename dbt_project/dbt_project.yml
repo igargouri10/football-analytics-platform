@@ -1,0 +1,30 @@
+# dbt_project/dbt_project.yml - FINAL VERSION
+
+name: 'football_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'football_analytics'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+  
+quoting:
+  database: true
+  schema: true
+  identifier: true
+  
+on-run-start:
+  - "INSTALL httpfs;"
+  - "LOAD httpfs;"
+
+models: {}
