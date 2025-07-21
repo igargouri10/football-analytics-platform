@@ -1,0 +1,182 @@
+[0m11:50:04.069048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283F2811810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283F2786490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283F2D2B150>]}
+
+
+============================== 11:50:04.072155 | ca26af1a-aaba-4896-93e1-6e912764794a ==============================
+[0m11:50:04.072155 [info ] [MainThread]: Running with dbt=1.7.19
+[0m11:50:04.073321 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\igarg\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:50:04.075957 [info ] [MainThread]: dbt version: 1.7.19
+[0m11:50:04.075957 [info ] [MainThread]: python version: 3.11.9
+[0m11:50:04.076964 [info ] [MainThread]: python path: C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\.venv\Scripts\python.exe
+[0m11:50:04.076964 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m11:50:04.081592 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'AWS_ACCESS_KEY_ID'
+[0m11:50:04.082927 [debug] [MainThread]: Command `dbt debug` failed at 11:50:04.082927 after 0.07 seconds
+[0m11:50:04.083928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283F2D53690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283EBFEACD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283F2D08650>]}
+[0m11:50:04.084540 [debug] [MainThread]: Flushing usage events
+[0m11:52:09.243642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D57DA00810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D57E0B1C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D57E598B50>]}
+
+
+============================== 11:52:09.246814 | 289c7cf4-9d7c-4bde-9c31-2726acc61925 ==============================
+[0m11:52:09.246814 [info ] [MainThread]: Running with dbt=1.7.19
+[0m11:52:09.247901 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\igarg\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:52:09.247901 [info ] [MainThread]: dbt version: 1.7.19
+[0m11:52:09.249441 [info ] [MainThread]: python version: 3.11.9
+[0m11:52:09.249441 [info ] [MainThread]: python path: C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\.venv\Scripts\python.exe
+[0m11:52:09.250862 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m11:52:09.420611 [info ] [MainThread]: Using profiles dir at C:\Users\igarg\.dbt
+[0m11:52:09.421114 [info ] [MainThread]: Using profiles.yml file at C:\Users\igarg\.dbt\profiles.yml
+[0m11:52:09.422119 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml
+[0m11:52:09.423123 [info ] [MainThread]: adapter type: duckdb
+[0m11:52:09.424272 [info ] [MainThread]: adapter version: 1.7.5
+[0m11:52:09.425311 [info ] [MainThread]: Configuration:
+[0m11:52:09.425311 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:52:09.426637 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m11:52:09.427636 [info ] [MainThread]: Required dependencies:
+[0m11:52:09.428638 [debug] [MainThread]: Executing "git --help"
+[0m11:52:09.468460 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:52:09.469971 [debug] [MainThread]: STDERR: "b''"
+[0m11:52:09.469971 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:52:09.472021 [info ] [MainThread]: Connection:
+[0m11:52:09.473006 [info ] [MainThread]:   database: dbt
+[0m11:52:09.473006 [info ] [MainThread]:   schema: main
+[0m11:52:09.474002 [info ] [MainThread]:   path: C:/Users/igarg/OneDrive/Desktop/football-analytics-platform/dbt_project/dbt.duckdb
+[0m11:52:09.475012 [info ] [MainThread]:   config_options: None
+[0m11:52:09.475012 [info ] [MainThread]:   extensions: None
+[0m11:52:09.476569 [info ] [MainThread]:   settings: None
+[0m11:52:09.476569 [info ] [MainThread]:   external_root: .
+[0m11:52:09.478586 [info ] [MainThread]:   use_credential_provider: None
+[0m11:52:09.480110 [info ] [MainThread]:   attach: None
+[0m11:52:09.480110 [info ] [MainThread]:   filesystems: None
+[0m11:52:09.481622 [info ] [MainThread]:   remote: None
+[0m11:52:09.482145 [info ] [MainThread]:   plugins: None
+[0m11:52:09.483156 [info ] [MainThread]:   disable_transactions: False
+[0m11:52:09.483156 [info ] [MainThread]: Registered adapter: duckdb=1.7.5
+[0m11:52:09.484670 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m11:52:09.485684 [debug] [MainThread]: Using duckdb connection "debug"
+[0m11:52:09.485684 [debug] [MainThread]: On debug: select 1 as id
+[0m11:52:09.485684 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:52:09.506098 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m11:52:09.507739 [debug] [MainThread]: On debug: Close
+[0m11:52:09.510265 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:52:09.511262 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:52:09.512265 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml> not found
+
+[0m11:52:09.514146 [debug] [MainThread]: Command `dbt debug` failed at 11:52:09.514146 after 0.33 seconds
+[0m11:52:09.515160 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:52:09.516161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D577903ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D577903E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D577900BD0>]}
+[0m11:52:09.516161 [debug] [MainThread]: Flushing usage events
+[0m13:15:05.848213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BA1B93290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BA1B9DED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BA1B9FC10>]}
+
+
+============================== 13:15:05.852676 | 58929a3b-6d42-47e2-832d-e4c1bf00e7d4 ==============================
+[0m13:15:05.852676 [info ] [MainThread]: Running with dbt=1.7.19
+[0m13:15:05.853692 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\igarg\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:15:05.854711 [info ] [MainThread]: dbt version: 1.7.19
+[0m13:15:05.855634 [info ] [MainThread]: python version: 3.11.9
+[0m13:15:05.856445 [info ] [MainThread]: python path: C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\.venv\Scripts\python.exe
+[0m13:15:05.856958 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m13:15:05.975045 [info ] [MainThread]: Using profiles dir at C:\Users\igarg\.dbt
+[0m13:15:05.975045 [info ] [MainThread]: Using profiles.yml file at C:\Users\igarg\.dbt\profiles.yml
+[0m13:15:05.976007 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml
+[0m13:15:05.978073 [info ] [MainThread]: adapter type: duckdb
+[0m13:15:05.978578 [info ] [MainThread]: adapter version: 1.7.5
+[0m13:15:05.979588 [info ] [MainThread]: Configuration:
+[0m13:15:05.980587 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:15:05.981592 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m13:15:05.981592 [info ] [MainThread]: Required dependencies:
+[0m13:15:05.982623 [debug] [MainThread]: Executing "git --help"
+[0m13:15:06.035781 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:15:06.036834 [debug] [MainThread]: STDERR: "b''"
+[0m13:15:06.036834 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:15:06.038306 [info ] [MainThread]: Connection:
+[0m13:15:06.038306 [info ] [MainThread]:   database: dbt
+[0m13:15:06.039372 [info ] [MainThread]:   schema: main
+[0m13:15:06.040396 [info ] [MainThread]:   path: C:/Users/igarg/OneDrive/Desktop/football-analytics-platform/dbt_project/dbt.duckdb
+[0m13:15:06.040396 [info ] [MainThread]:   config_options: None
+[0m13:15:06.041326 [info ] [MainThread]:   extensions: None
+[0m13:15:06.041945 [info ] [MainThread]:   settings: None
+[0m13:15:06.041945 [info ] [MainThread]:   external_root: .
+[0m13:15:06.042984 [info ] [MainThread]:   use_credential_provider: None
+[0m13:15:06.042984 [info ] [MainThread]:   attach: None
+[0m13:15:06.044451 [info ] [MainThread]:   filesystems: None
+[0m13:15:06.045965 [info ] [MainThread]:   remote: None
+[0m13:15:06.047366 [info ] [MainThread]:   plugins: None
+[0m13:15:06.048868 [info ] [MainThread]:   disable_transactions: False
+[0m13:15:06.050496 [info ] [MainThread]: Registered adapter: duckdb=1.7.5
+[0m13:15:06.051752 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m13:15:06.052856 [debug] [MainThread]: Using duckdb connection "debug"
+[0m13:15:06.053562 [debug] [MainThread]: On debug: select 1 as id
+[0m13:15:06.054449 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:15:06.082472 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m13:15:06.083483 [debug] [MainThread]: On debug: Close
+[0m13:15:06.087011 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:15:06.087573 [info ] [MainThread]: [31m1 check failed:[0m
+[0m13:15:06.088709 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml> not found
+
+[0m13:15:06.091041 [debug] [MainThread]: Command `dbt debug` failed at 13:15:06.090149 after 0.31 seconds
+[0m13:15:06.091545 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:15:06.091545 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B9ABA6990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BA16ED790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B9AE83F90>]}
+[0m13:15:06.092727 [debug] [MainThread]: Flushing usage events
+[0m17:53:28.148997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F13E3085D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F13DDD6310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F13E2C2750>]}
+
+
+============================== 17:53:28.152878 | d5dd9d44-d9fb-4ac3-8d57-5fb406077d70 ==============================
+[0m17:53:28.152878 [info ] [MainThread]: Running with dbt=1.7.19
+[0m17:53:28.154073 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\igarg\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --select stg_matches', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:53:28.155174 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:53:28.156337 [debug] [MainThread]: Command `dbt run` failed at 17:53:28.155174 after 0.06 seconds
+[0m17:53:28.156873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1375D8D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F13CB98F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F13CF0A050>]}
+[0m17:53:28.156873 [debug] [MainThread]: Flushing usage events
+[0m20:47:56.209210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3FB5FB210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3FA261310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3FB5FBA50>]}
+
+
+============================== 20:47:56.211710 | 2bda511c-dcba-47e5-945b-89a98553f609 ==============================
+[0m20:47:56.211710 [info ] [MainThread]: Running with dbt=1.7.19
+[0m20:47:56.217580 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\igarg\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:47:56.218638 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:47:56.218638 [debug] [MainThread]: Command `dbt run` failed at 20:47:56.218638 after 0.08 seconds
+[0m20:47:56.220622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3FB5F86D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3F48FCD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3FB466510>]}
+[0m20:47:56.220622 [debug] [MainThread]: Flushing usage events
+[0m11:00:01.982940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015BAF158290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015BAED5EC50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015BAEBE50D0>]}
+
+
+============================== 11:00:01.987053 | 565a61e4-beac-4125-97b7-e479357fa28f ==============================
+[0m11:00:01.987053 [info ] [MainThread]: Running with dbt=1.7.19
+[0m11:00:01.988048 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\igarg\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt clean', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:00:01.989088 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:00:01.990051 [debug] [MainThread]: Command `dbt clean` failed at 11:00:01.990051 after 0.08 seconds
+[0m11:00:01.990598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015BAEC70150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015BA843CD50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015BA84C4FD0>]}
+[0m11:00:01.991600 [debug] [MainThread]: Flushing usage events
+[0m11:00:11.645929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268893E9390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026889256950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000268893E8550>]}
+
+
+============================== 11:00:11.650403 | 6858ddbe-5d66-4971-8e16-4a822ce53232 ==============================
+[0m11:00:11.650403 [info ] [MainThread]: Running with dbt=1.7.19
+[0m11:00:11.650403 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\igarg\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m11:00:11.652239 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\igarg\OneDrive\Desktop\football-analytics-platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:00:11.653251 [debug] [MainThread]: Command `dbt run` failed at 11:00:11.653251 after 0.07 seconds
+[0m11:00:11.654427 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002688263CD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026889256990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002688945FD50>]}
+[0m11:00:11.654427 [debug] [MainThread]: Flushing usage events
