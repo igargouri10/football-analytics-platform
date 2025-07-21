@@ -1,4 +1,4 @@
-# requirements.txt
-streamlit
-pandas
-duckdb==0.9.2
+# airflow/requirements.txt
+apache-airflow-providers-amazon
+boto3
+requests

@@ -217,3 +217,5 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore dbt build artifacts, but NOT the final database file dbt_project/target/* !dbt_project/target/dbt.duckdb
