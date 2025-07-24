@@ -1,18 +1,15 @@
-# Environment variables - DO NOT COMMIT THIS FILE
+# Environment variables - DO NOT COMMIT
 .env
+
+# Python virtual environment
+.venv/
+__pycache__/
+
+# Airflow logs - DO NOT COMMIT
 airflow/logs/
 
-# Python specific
-__pycache__/
-*.py[cod]
-.venv/
-
-# IDE and OS specific
-.vscode/
-.idea/
-.DS_Store
-
 # dbt artifacts - IGNORE ALL, THEN MAKE AN EXCEPTION
+# This is the most important part.
 dbt_project/target/
 !dbt_project/target/dbt.duckdb
 dbt_project/logs/
