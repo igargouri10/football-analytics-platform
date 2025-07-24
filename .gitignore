@@ -1,5 +1,6 @@
 # Environment variables - DO NOT COMMIT THIS FILE
 .env
+airflow/logs/
 
 # Python specific
 __pycache__/
@@ -11,13 +12,8 @@ __pycache__/
 .idea/
 .DS_Store
 
-# dbt specific artifacts
-# Ignore the logs and packages directories completely
-dbt_project/logs/
-dbt_project/dbt_packages/
-
-# This is the crucial part:
-# 1. Ignore the entire target directory.
-# 2. BUT, make an exception for the dbt.duckdb file inside it.
+# dbt artifacts - IGNORE ALL, THEN MAKE AN EXCEPTION
 dbt_project/target/
 !dbt_project/target/dbt.duckdb
+dbt_project/logs/
+dbt_project/dbt_packages/
