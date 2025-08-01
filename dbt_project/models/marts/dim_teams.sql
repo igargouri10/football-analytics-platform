@@ -1,28 +1,36 @@
 -- models/marts/dim_teams.sql
 
-with all_teams as (
+WITH stg_matches AS (
+    -- Get the raw JSON data for each match from the staging model
+    SELECT * FROM {{ ref('stg_matches') }}
+),
 
-    -- Select home teams from the staging model
-    select
-        home_team_id as team_id,
-        home_team_name as team_name
-    from {{ ref('stg_matches') }}
+home_teams AS (
+    -- Extract the home team id and name from the JSON
+    SELECT
+        (match_data ->> 'idHomeTeam')::INT AS team_id,
+        (match_data ->> 'strHomeTeam') AS team_name
+    FROM stg_matches
+),
 
-    union all
+away_teams AS (
+    -- Extract the away team id and name from the JSON
+    SELECT
+        (match_data ->> 'idAwayTeam')::INT AS team_id,
+        (match_data ->> 'strAwayTeam') AS team_name
+    FROM stg_matches
+),
 
-    -- Select away teams from the staging model
-    select
-        away_team_id as team_id,
-        away_team_name as team_name
-    from {{ ref('stg_matches') }}
-
+all_teams AS (
+    -- Combine the home and away teams into a single list
+    SELECT * FROM home_teams
+    UNION ALL
+    SELECT * FROM away_teams
 )
 
--- The UNION ALL operation might create duplicates. We use GROUP BY
--- to get a unique list of teams.
-select
+-- Get the unique list of teams
+SELECT DISTINCT
     team_id,
     team_name
-from all_teams
-group by 1, 2
-order by team_id
+FROM all_teams
+ORDER BY team_name

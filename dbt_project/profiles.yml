@@ -1,0 +1,13 @@
+football_analytics_platform:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '/opt/airflow/dbt_project/dbt.duckdb'
+      
+      # 👇 These settings are for reading data from S3
+      # They securely use the variables from your .env file
+      settings:
+        s3_region: "{{ env_var('AWS_REGION') }}"
+        s3_access_key_id: "{{ env_var('AWS_ACCESS_KEY_ID') }}"
+        s3_secret_access_key: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"

@@ -4,7 +4,7 @@ name: 'football_analytics'
 version: '1.0.0'
 config-version: 2
 
-profile: 'football_analytics'
+profile: 'football_analytics_platform'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]

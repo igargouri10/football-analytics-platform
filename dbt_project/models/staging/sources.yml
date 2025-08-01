@@ -1,14 +1,14 @@
-# models/staging/sources.yml
+# models/staging/sources.yml - CORRECTED VERSION
+
 version: 2
 
 sources:
-  - name: raw_football_data
-    description: "Source data from football-data.org API stored in S3"
-    database: "{{ env_var('AWS_S3_BUCKET_NAME') }}" # Use the bucket name from .env
-    schema: "raw/matches" # This is the folder path within the bucket
+  - name: football_data_raw
+    description: "Raw football match data from S3"
+    database: main
+    schema: raw
     tables:
-      - name: "matches_json"
-        # This config tells DuckDB how to read all the JSON files from the S3 folder
-        external:
-          location: "s3://{{ env_var('AWS_S3_BUCKET_NAME') }}/raw/matches/*.json"
-          format: "json"
+      - name: matches
+        meta:
+          # Corrected the variable name here
+          external_location: "s3://{{ env_var('S3_BUCKET_NAME') }}/raw/thesportsdb/epl_season_2023-2024.json"

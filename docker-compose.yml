@@ -1,6 +1,8 @@
-# docker-compose.yml
+# docker-compose.yml - UPDATED VERSION
+
 x-airflow-common: &airflow-common
-  image: apache/airflow:2.7.2
+  # Build a custom image from the Dockerfile in the current directory
+  build: .
   environment:
     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
     - AIRFLOW__CORE__LOAD_EXAMPLES=False
@@ -10,10 +12,13 @@ x-airflow-common: &airflow-common
     - ./airflow/logs:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins
     - ./scripts:/opt/airflow/scripts
-    - ./airflow/requirements.txt:/opt/airflow/requirements.txt
+    # Mount the dbt project so Airflow can run dbt commands
+    - ./dbt_project:/opt/airflow/dbt_project
   depends_on:
     - postgres
-  command: bash -c "pip install -r /opt/airflow/requirements.txt && airflow db upgrade && airflow webserver"
+  # Load environment variables from the .env file for all services
+  env_file:
+    - .env
 
 services:
   postgres:
@@ -27,6 +32,8 @@ services:
 
   airflow-webserver:
     <<: *airflow-common
+    # Command to just start the webserver (dependencies are already built-in)
+    command: webserver
     ports:
       - "8080:8080"
     healthcheck:
@@ -34,16 +41,13 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-    env_file:
-      - .env
 
   airflow-scheduler:
     <<: *airflow-common
-    command: bash -c "pip install -r /opt/airflow/requirements.txt && airflow scheduler"
+    # Command to just start the scheduler (dependencies are already built-in)
+    command: scheduler
     healthcheck:
       test: ["CMD-SHELL", "airflow jobs check --job-type SchedulerJob --hostname \"$${HOSTNAME}\""]
       interval: 10s
       timeout: 10s
       retries: 5
-    env_file:
-      - .env
