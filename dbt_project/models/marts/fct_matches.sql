@@ -1,4 +1,5 @@
 -- models/marts/fct_matches.sql - FINAL VERSION
+{{ config(materialized='table') }}
 
 WITH stg_matches AS (
     SELECT * FROM {{ ref('stg_matches') }}

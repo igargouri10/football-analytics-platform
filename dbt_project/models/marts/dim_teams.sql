@@ -1,4 +1,5 @@
 -- models/marts/dim_teams.sql
+{{ config(materialized='table') }}
 
 WITH stg_matches AS (
     -- Get the raw JSON data for each match from the staging model
