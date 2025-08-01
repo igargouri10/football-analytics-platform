@@ -1,11 +1,18 @@
-# Ignore the entire target directory...
-target/
+# Python
+.venv/
+__pycache__/
 
-# ...but DO NOT ignore the database file inside it.
-!target/dbt.duckdb
+# IDE / OS files
+.vscode/
+.DS_Store
 
-# Continue ignoring these other folders
-dbt_packages/
-logs/
-
+# Secrets
 .env
+
+# Airflow logs and artifacts
+airflow/logs/
+airflow/plugins/__pycache__/
+
+# dbt artifacts to ignore
+dbt_project/logs/
+dbt_project/dbt_packages/
