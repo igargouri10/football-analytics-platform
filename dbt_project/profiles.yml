@@ -3,7 +3,7 @@ football_analytics_platform:
   outputs:
     dev:
       type: duckdb
-      path: '/opt/airflow/dbt_project/dbt.duckdb'
+      path: '/opt/airflow/dbt_project/target/dbt.duckdb'
       
       # 👇 These settings are for reading data from S3
       # They securely use the variables from your .env file
