@@ -1,16 +1,11 @@
-# Environment variables - DO NOT COMMIT
+# Ignore the entire target directory...
+target/
+
+# ...but DO NOT ignore the database file inside it.
+!target/dbt.duckdb
+
+# Continue ignoring these other folders
+dbt_packages/
+logs/
+
 .env
-
-# Python virtual environment
-.venv/
-__pycache__/
-
-# Airflow logs - DO NOT COMMIT
-airflow/logs/
-
-# dbt artifacts - IGNORE ALL, THEN MAKE AN EXCEPTION
-# This is the most important part.
-dbt_project/target/
-!dbt_project/target/dbt.duckdb
-dbt_project/logs/
-dbt_project/dbt_packages/
