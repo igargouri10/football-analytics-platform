@@ -1,4 +1,5 @@
 -- models/staging/stg_matches.sql
+{{ config(materialized='table') }}
 
 WITH source AS (
     -- Reference the raw data source we defined in sources.yml
