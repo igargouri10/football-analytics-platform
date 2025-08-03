@@ -1,14 +1,12 @@
-# models/staging/sources.yml - CORRECTED VERSION
+# models/staging/sources.yml - SNOWFLAKE VERSION
 
 version: 2
 
 sources:
   - name: football_data_raw
-    description: "Raw football match data from S3"
-    database: main
-    schema: raw
+    description: "Raw football match data loaded into Snowflake"
+    database: PROD
+    schema: RAW
     tables:
-      - name: matches
-        meta:
-          # Corrected the variable name here
-          external_location: "s3://{{ env_var('S3_BUCKET_NAME') }}/raw/thesportsdb/epl_season_2023-2024.json"
+      # This is the raw table we loaded the JSON into
+      - name: RAW_MATCHES
