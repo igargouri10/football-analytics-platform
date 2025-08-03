@@ -2,11 +2,9 @@
   
     
 
-create or replace transient table "PROD"."RAW"."dim_teams"
-    
-    
-    
-    as (
+        create or replace transient table "PROD"."RAW"."dim_teams"
+         as
+        (
 
 WITH stg_matches AS (
     SELECT * FROM "PROD"."RAW"."stg_matches"
@@ -33,8 +31,6 @@ SELECT DISTINCT
     team_name
 FROM all_teams
 ORDER BY team_name
-    )
-;
-
-
+        );
+      
   

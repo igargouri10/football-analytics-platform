@@ -5,7 +5,7 @@ WITH source AS (
     SELECT
         *
     FROM
-        "PROD"."RAW"."RAW_MATCHES"
+        PROD.RAW.RAW_MATCHES
 )
 SELECT
     -- Use an alias 'f' for the flatten function

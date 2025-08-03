@@ -5,7 +5,7 @@
 
 
 select team_id
-from "dbt"."main"."dim_teams"
+from "PROD"."RAW"."dim_teams"
 where team_id is null
 
 

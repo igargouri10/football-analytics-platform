@@ -9,4 +9,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends git
 # Switch back to the non-privileged airflow user
 USER airflow
 # Install the dbt-duckdb library
-RUN pip install --no-cache-dir dbt-duckdb==1.7.1
+RUN pip install --no-cache-dir dbt-duckdb==1.8.0 dbt-snowflake==1.8.0

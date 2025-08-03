@@ -1,10 +1,7 @@
 
   create or replace   view "PROD"."RAW"."fct_training_dataset"
   
-  
-  
-  
-  as (
+   as (
     -- models/marts/fct_training_dataset.sql
 
 WITH matches AS (

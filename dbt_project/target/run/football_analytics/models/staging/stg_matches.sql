@@ -1,20 +1,17 @@
 
   
     
-    
 
-    create  table
-      "dbt"."main"."stg_matches__dbt_tmp"
-  
-    as (
-      -- models/staging/stg_matches.sql - SNOWFLAKE VERSION (REVISED)
+        create or replace transient table "PROD"."RAW"."stg_matches"
+         as
+        (-- models/staging/stg_matches.sql - SNOWFLAKE VERSION (REVISED)
 
 
 WITH source AS (
     SELECT
         *
     FROM
-        "PROD"."RAW"."RAW_MATCHES"
+        PROD.RAW.RAW_MATCHES
 )
 SELECT
     -- Use an alias 'f' for the flatten function
@@ -23,6 +20,6 @@ SELECT
 FROM
     source,
     LATERAL FLATTEN(input => source.RAW_DATA['events']) f
-    );
-  
+        );
+      
   
