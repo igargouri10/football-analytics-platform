@@ -1,9 +1,10 @@
-# dashboard/app.py - FINAL, GUARANTEED VERSION
+# dashboard/app.py - FINAL VERSION with AI Match Predictor
 
 import streamlit as st
 import pandas as pd
 import duckdb
 import os
+import joblib
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
@@ -13,116 +14,110 @@ st.set_page_config(
 )
 
 # --- DATA LOADING ---
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'dbt_project', 'target', 'dbt.duckdb')
+# Correctly locate the dbt.duckdb file
+DB_PATH = os.path.join(os.path.dirname(__file__), 'dbt.duckdb')
 
 @st.cache_data
 def load_data():
-    """Connects to DuckDB, loads the fact and dimension tables, and returns them as pandas DataFrames."""
+    """Connects to DuckDB, loads tables, and returns them as pandas DataFrames."""
     con = duckdb.connect(DB_PATH, read_only=True)
     
-    # FINAL, ROBUST SQL QUERY USING CTES
-    matches_df = con.execute("""
-        WITH matches AS (
-            SELECT * FROM fct_matches
-        ),
-        home_teams AS (
-            SELECT team_id, team_name AS home_team_name FROM dim_teams
-        ),
-        away_teams AS (
-            SELECT team_id, team_name AS away_team_name FROM dim_teams
-        )
-        SELECT
-            matches.match_id,
-            matches.match_date,
-            home_teams.home_team_name,
-            away_teams.away_team_name,
-            matches.home_team_score,
-            matches.away_team_score
-        FROM matches
-        LEFT JOIN home_teams ON matches.home_team_id = home_teams.team_id
-        LEFT JOIN away_teams ON matches.away_team_id = away_teams.team_id
-        ORDER BY matches.match_date DESC
-    """).df()
-
-    # Load dimension table for the dropdown
-    teams_df = con.execute("SELECT team_name FROM dim_teams ORDER BY team_name ASC").df()
+    matches_df = con.execute("SELECT * FROM fct_matches").df()
+    teams_df = con.execute("SELECT team_id, team_name FROM dim_teams ORDER BY team_name ASC").df()
+    training_df = con.execute("SELECT * FROM fct_training_dataset").df()
     
     con.close()
     
     matches_df['match_date'] = pd.to_datetime(matches_df['match_date'])
     
-    return matches_df, teams_df
+    return matches_df, teams_df, training_df
+
+# --- MODEL LOADING ---
+@st.cache_resource
+def load_model():
+    """Loads the trained model from the .pkl file."""
+    model = joblib.load(os.path.join(os.path.dirname(__file__), 'match_predictor.pkl'))
+    return model
 
 # --- MAIN APPLICATION LOGIC ---
 try:
-    matches_df, teams_df = load_data()
+    matches_df, teams_df, training_df = load_data()
+    model = load_model()
 
     # --- UI LAYOUT ---
     st.title("⚽ Football Analytics Dashboard")
-    st.markdown("An interactive dashboard to explore Premier League match results, powered by a full dbt and Airflow pipeline.")
+    st.markdown("An interactive dashboard to explore match results and predict outcomes.")
 
     # --- SIDEBAR FOR TEAM SELECTION ---
     st.sidebar.header("Filter by Team")
-    team_list = ["All Teams"] + sorted(teams_df['team_name'].unique().tolist())
+    team_list = ["All Teams"] + teams_df['team_name'].tolist()
     selected_team = st.sidebar.selectbox("Select a Team", team_list)
 
-    # --- FILTER DATA BASED ON SELECTION ---
-    if selected_team == "All Teams":
-        filtered_matches = matches_df
-    else:
+    # --- MAIN PAGE ---
+    
+    # --- AI MATCH PREDICTOR ---
+    st.header("🔮 AI Match Predictor")
+    
+    team_names = teams_df['team_name'].tolist()
+    col1, col2 = st.columns(2)
+    home_team_selection = col1.selectbox("Select Home Team", team_names, index=0)
+    away_team_selection = col2.selectbox("Select Away Team", team_names, index=1)
+
+    if st.button("Predict Outcome"):
+        if home_team_selection == away_team_selection:
+            st.error("Please select two different teams.")
+        else:
+            # Get the latest features for the selected teams
+            home_team_id = teams_df[teams_df['team_name'] == home_team_selection]['team_id'].iloc[0]
+            away_team_id = teams_df[teams_df['team_name'] == away_team_selection]['team_id'].iloc[0]
+            
+            # Find the most recent match for each team to get their latest stats
+            home_stats = training_df[training_df['home_team_id'] == home_team_id].sort_values(by='match_date', ascending=False).iloc[0]
+            away_stats = training_df[training_df['away_team_id'] == away_team_id].sort_values(by='match_date', ascending=False).iloc[0]
+
+            # Prepare the feature vector for the model
+            prediction_features = [
+                home_stats['home_avg_goals_scored_last_5'],
+                home_stats['home_avg_goals_conceded_last_5'],
+                away_stats['away_avg_goals_scored_last_5'],
+                away_stats['away_avg_goals_conceded_last_5']
+            ]
+            
+            # Get prediction probabilities
+            prediction_proba = model.predict_proba([prediction_features])[0]
+            
+            # Get the class labels from the model
+            classes = model.classes_
+            
+            # Create a dictionary for easy lookup
+            proba_dict = {cls: prob for cls, prob in zip(classes, prediction_proba)}
+
+            home_win_prob = proba_dict.get('HOME_WIN', 0)
+            away_win_prob = proba_dict.get('AWAY_WIN', 0)
+            draw_prob = proba_dict.get('DRAW', 0)
+
+            st.success("Prediction successful!")
+            pcol1, pcol2, pcol3 = st.columns(3)
+            pcol1.metric(f"{home_team_selection} (Home) Win", f"{home_win_prob:.0%}")
+            pcol2.metric("Draw", f"{draw_prob:.0%}")
+            pcol3.metric(f"{away_team_selection} (Away) Win", f"{away_win_prob:.0%}")
+
+
+    # --- HISTORICAL DATA ANALYSIS ---
+    st.header("Historical Data Analysis")
+    # The rest of your existing dashboard code
+    filtered_matches = matches_df
+    if selected_team != "All Teams":
         filtered_matches = matches_df[
             (matches_df['home_team_name'] == selected_team) | 
             (matches_df['away_team_name'] == selected_team)
         ]
-
-    # --- MAIN PAGE DISPLAY ---
-    st.header(f"Displaying Results for: {selected_team}")
-
-    if selected_team != "All Teams":
-        # Filter out unplayed matches BEFORE calculating stats
-        played_matches = filtered_matches.dropna(subset=['home_team_score', 'away_team_score'])
-        
-        wins, losses, draws = 0, 0, 0
-        # Iterate over PLAYED matches only
-        for _, row in played_matches.iterrows():
-            is_home_team = (row['home_team_name'] == selected_team)
-            if row['home_team_score'] == row['away_team_score']:
-                draws += 1
-            elif (is_home_team and row['home_team_score'] > row['away_team_score']) or \
-                 (not is_home_team and row['away_team_score'] > row['home_team_score']):
-                wins += 1
-            else:
-                losses += 1
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Wins", wins)
-        col2.metric("Losses", losses)
-        col3.metric("Draws", draws)
-
-    st.subheader("Cumulative Goal Difference Over Time")
-    if not filtered_matches.empty and selected_team != "All Teams":
-        # Filter out unplayed matches for the chart
-        chart_data = filtered_matches.dropna(subset=['home_team_score', 'away_team_score']).copy().sort_values(by='match_date')
-        
-        if not chart_data.empty:
-            chart_data['goal_difference'] = chart_data.apply(
-                lambda row: row['home_team_score'] - row['away_team_score'] if row['home_team_name'] == selected_team else row['away_team_score'] - row['home_team_score'],
-                axis=1
-            )
-            chart_data['cumulative_goal_difference'] = chart_data['goal_difference'].cumsum()
-            chart_data = chart_data.set_index('match_date')
-            st.line_chart(chart_data['cumulative_goal_difference'])
-        else:
-            st.info("No played matches with scores available to plot a trend.")
-    else:
-        st.info("Select a specific team to view their goal difference trend.")
-
-    st.subheader("Match Results")
+    
     st.dataframe(
         filtered_matches,
-        column_config={ "match_id": None, "match_date": "Date", "home_team_name": "Home Team", "away_team_name": "Away Team", "home_team_score": "Home Score", "away_team_score": "Away Score", },
+        column_config={ "match_id": None, "league_id": None, "season": None, "match_date": "Date", "match_status": None, "home_team_id": None, "away_team_id": None, "home_team_name": "Home Team", "away_team_name": "Away Team", "home_team_score": "Home Score", "away_team_score": "Away Score", },
         hide_index=True,
     )
 
 except Exception as e:
-    st.error(f"An error occurred while loading the data: {e}")
-    st.info("Please ensure your dbt models have been run successfully (`dbt run`). The data warehouse file (`dbt_project/target/dbt.duckdb`) may be missing or empty.")
+    st.error(f"An error occurred: {e}")
