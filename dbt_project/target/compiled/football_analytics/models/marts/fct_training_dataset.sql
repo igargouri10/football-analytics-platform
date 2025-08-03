@@ -15,7 +15,7 @@ WITH matches AS (
             WHEN away_team_score > home_team_score THEN 'AWAY_WIN'
             ELSE 'DRAW'
         END AS match_result
-    FROM "dbt"."main"."fct_matches"
+    FROM "PROD"."RAW"."fct_matches"
 ),
 
 -- Unpivot the data to have one row per team per match

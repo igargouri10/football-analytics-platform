@@ -29,12 +29,13 @@ with DAG(
     )
 
     dbt_run_task = BashOperator(
-    task_id="dbt_run",
-    bash_command=f"dbt run --project-dir {DBT_PROJECT_DIR} --profiles-dir {DBT_PROJECT_DIR} --target prod",
-)
+        task_id="dbt_run",
+        bash_command=f"dbt run --project-dir {DBT_PROJECT_DIR} --profiles-dir {DBT_PROJECT_DIR} --target snowflake",
+    )
+
     dbt_test_task = BashOperator(
         task_id="dbt_test",
-        bash_command=f"dbt test --project-dir {DBT_PROJECT_DIR} --profiles-dir {DBT_PROJECT_DIR} --target prod",
+        bash_command=f"dbt test --project-dir {DBT_PROJECT_DIR} --profiles-dir {DBT_PROJECT_DIR} --target snowflake",
     )
 
     # This sets the order of execution for the tasks

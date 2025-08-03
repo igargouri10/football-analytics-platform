@@ -1,52 +1,30 @@
-
+-- back compat for old kwarg name
   
+  begin;
     
+        
+            
+	    
+	    
+            
+        
     
 
-    create  table
-      "dbt"."main"."fct_matches__dbt_tmp"
-  
-    as (
-      -- models/marts/fct_matches.sql - FINAL VERSION
+    
 
+    merge into "PROD"."RAW"."fct_matches" as DBT_INTERNAL_DEST
+        using "PROD"."RAW"."fct_matches__dbt_tmp" as DBT_INTERNAL_SOURCE
+        on ((DBT_INTERNAL_SOURCE.match_id = DBT_INTERNAL_DEST.match_id))
 
-WITH stg_matches AS (
-    SELECT * FROM "dbt"."main"."stg_matches"
-),
+    
+    when matched then update set
+        "MATCH_ID" = DBT_INTERNAL_SOURCE."MATCH_ID","LEAGUE_ID" = DBT_INTERNAL_SOURCE."LEAGUE_ID","SEASON" = DBT_INTERNAL_SOURCE."SEASON","MATCH_DATE" = DBT_INTERNAL_SOURCE."MATCH_DATE","MATCH_STATUS" = DBT_INTERNAL_SOURCE."MATCH_STATUS","HOME_TEAM_ID" = DBT_INTERNAL_SOURCE."HOME_TEAM_ID","HOME_TEAM_NAME" = DBT_INTERNAL_SOURCE."HOME_TEAM_NAME","HOME_TEAM_SCORE" = DBT_INTERNAL_SOURCE."HOME_TEAM_SCORE","AWAY_TEAM_ID" = DBT_INTERNAL_SOURCE."AWAY_TEAM_ID","AWAY_TEAM_NAME" = DBT_INTERNAL_SOURCE."AWAY_TEAM_NAME","AWAY_TEAM_SCORE" = DBT_INTERNAL_SOURCE."AWAY_TEAM_SCORE"
+    
 
-transformed AS (
-    SELECT
-        -- Match details
-        (match_data ->> 'idEvent')::INT AS match_id,
-        (match_data ->> 'idLeague')::INT AS league_id,
-        (match_data ->> 'strSeason') AS season,
-        (match_data ->> 'dateEvent')::DATE AS match_date,
-        (match_data ->> 'strStatus') AS match_status,
+    when not matched then insert
+        ("MATCH_ID", "LEAGUE_ID", "SEASON", "MATCH_DATE", "MATCH_STATUS", "HOME_TEAM_ID", "HOME_TEAM_NAME", "HOME_TEAM_SCORE", "AWAY_TEAM_ID", "AWAY_TEAM_NAME", "AWAY_TEAM_SCORE")
+    values
+        ("MATCH_ID", "LEAGUE_ID", "SEASON", "MATCH_DATE", "MATCH_STATUS", "HOME_TEAM_ID", "HOME_TEAM_NAME", "HOME_TEAM_SCORE", "AWAY_TEAM_ID", "AWAY_TEAM_NAME", "AWAY_TEAM_SCORE")
 
-        -- Home team details
-        (match_data ->> 'idHomeTeam')::INT AS home_team_id,
-        (match_data ->> 'strHomeTeam') AS home_team_name,
-        (match_data ->> 'intHomeScore')::INT AS home_team_score,
-
-        -- Away team details
-        (match_data ->> 'idAwayTeam')::INT AS away_team_id,
-        (match_data ->> 'strAwayTeam') AS away_team_name,
-        (match_data ->> 'intAwayScore')::INT AS away_team_score,
-
-        -- Add a row number to handle potential duplicates from the source API
-        ROW_NUMBER() OVER(PARTITION BY (match_data ->> 'idEvent')::INT ORDER BY (match_data ->> 'dateEvent')::DATE DESC) as row_num
-
-    FROM
-        stg_matches
-    WHERE
-        -- Only include matches that have actually finished
-        (match_data ->> 'strStatus') = 'Match Finished'
-)
-
--- Select only the most recent record for each match to ensure uniqueness
-SELECT *
-FROM transformed
-WHERE row_num = 1
-    );
-  
-  
+;
+    commit;

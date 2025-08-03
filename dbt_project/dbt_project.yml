@@ -22,9 +22,5 @@ quoting:
   database: true
   schema: true
   identifier: true
-  
-on-run-start:
-  - "INSTALL httpfs;"
-  - "LOAD httpfs;"
 
 models: {}

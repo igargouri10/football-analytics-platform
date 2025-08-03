@@ -12,8 +12,9 @@ x-airflow-common: &airflow-common
     - ./airflow/logs:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins
     - ./scripts:/opt/airflow/scripts
-    # Mount the dbt project so Airflow can run dbt commands
     - ./dbt_project:/opt/airflow/dbt_project
+    # ADDED THIS LINE to make the dashboard folder available to Airflow
+    - ./dashboard:/opt/airflow/dashboard
   depends_on:
     - postgres
   # Load environment variables from the .env file for all services

@@ -1,12 +1,33 @@
-# dbt_project/profiles.yml - FINAL VERSION
-
 football_analytics_platform:
   target: dev
   outputs:
+    # Target for local development with DuckDB
     dev:
       type: duckdb
-      path: '../dashboard/dbt.duckdb'
+      path: 'target/dbt.duckdb'
+      settings:
+        s3_region: "{{ env_var('AWS_REGION') }}"
+        s3_access_key_id: "{{ env_var('AWS_ACCESS_KEY_ID') }}"
+        s3_secret_access_key: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"
 
+    # Target for production with DuckDB in Airflow
     prod:
       type: duckdb
-      path: '/opt/airflow/dashboard/dbt.duckdb'
+      path: '/opt/airflow/dbt_project/target/dbt.duckdb'
+      settings:
+        s3_region: "{{ env_var('AWS_REGION') }}"
+        s3_access_key_id: "{{ env_var('AWS_ACCESS_KEY_ID') }}"
+        s3_secret_access_key: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"
+
+    # Target for Snowflake
+    snowflake:
+      type: snowflake
+      account: "LMGBBPF-LUC85498"
+      user: "ISMAILGARGOURI"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "ACCOUNTADMIN"
+      database: "PROD"
+      warehouse: "COMPUTE_WH"
+      schema: "RAW"
+      threads: 4
+      client_session_keep_alive: False

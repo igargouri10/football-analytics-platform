@@ -7,19 +7,22 @@
       "dbt"."main"."stg_matches__dbt_tmp"
   
     as (
-      -- models/staging/stg_matches.sql
+      -- models/staging/stg_matches.sql - SNOWFLAKE VERSION (REVISED)
 
 
 WITH source AS (
-    -- Reference the raw data source we defined in sources.yml
-    SELECT * FROM 's3://ismailgargouri-football-data-lake-useast1/raw/thesportsdb/epl_season_2023-2024.json'
+    SELECT
+        *
+    FROM
+        "PROD"."RAW"."RAW_MATCHES"
 )
-
 SELECT
-    -- Unnest the nested 'events' array to get one row per match
-    UNNEST(events) as match_data
+    -- Use an alias 'f' for the flatten function
+    -- Access the 'events' key using bracket notation for robustness
+    f.value AS match_data
 FROM
-    source
+    source,
+    LATERAL FLATTEN(input => source.RAW_DATA['events']) f
     );
   
   

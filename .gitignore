@@ -9,9 +9,11 @@ __pycache__/
 # Secrets
 .env
 
-# Airflow logs and artifacts
+# Airflow logs
 airflow/logs/
 
-# dbt artifacts to ignore
+# dbt artifacts to ignore (but not the final database)
 dbt_project/logs/
 dbt_project/dbt_packages/
+dbt_project/target/
+!dbt_project/target/dbt.duckdb

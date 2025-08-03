@@ -1,6 +1,10 @@
 
+  create or replace   view "PROD"."RAW"."fct_training_dataset"
   
-  create view "dbt"."main"."fct_training_dataset__dbt_tmp" as (
+  
+  
+  
+  as (
     -- models/marts/fct_training_dataset.sql
 
 WITH matches AS (
@@ -18,7 +22,7 @@ WITH matches AS (
             WHEN away_team_score > home_team_score THEN 'AWAY_WIN'
             ELSE 'DRAW'
         END AS match_result
-    FROM "dbt"."main"."fct_matches"
+    FROM "PROD"."RAW"."fct_matches"
 ),
 
 -- Unpivot the data to have one row per team per match
@@ -105,3 +109,4 @@ final_dataset AS (
 
 SELECT * FROM final_dataset
   );
+
