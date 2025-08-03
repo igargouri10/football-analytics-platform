@@ -1,4 +1,4 @@
-# dashboard/app.py - FINAL SNOWFLAKE VERSION
+# dashboard/app.py - FINAL CORRECTED VERSION
 
 import streamlit as st
 import pandas as pd
@@ -14,35 +14,24 @@ st.set_page_config(
 )
 
 # --- SNOWFLAKE CONNECTION ---
-# Use st.cache_resource to only run once.
 @st.cache_resource
 def init_connection():
-    """Initializes a connection to Snowflake, reading credentials from Streamlit secrets."""
     creds = st.secrets["snowflake"]
-    return snowflake.connector.connect(
-        user=creds["user"],
-        password=creds["password"],
-        account=creds["account"],
-        warehouse=creds["warehouse"],
-        database=creds["database"],
-        schema=creds["schema"]
-    )
+    return snowflake.connector.connect(**creds)
 
 # --- DATA LOADING ---
-# Use st.cache_data to cache data loading for 10 minutes.
 @st.cache_data(ttl=600)
 def load_data(_conn):
-    """Loads tables from Snowflake and returns them as pandas DataFrames."""
     cursor = _conn.cursor()
     
-    # Load tables
-    cursor.execute("SELECT * FROM PROD.RAW.FCT_MATCHES")
+    # Use quoted, lowercase table names to match Snowflake
+    cursor.execute('SELECT * FROM "fct_matches"')
     matches_df = cursor.fetch_pandas_all()
     
-    cursor.execute("SELECT TEAM_ID, TEAM_NAME FROM PROD.RAW.DIM_TEAMS ORDER BY TEAM_NAME ASC")
+    cursor.execute('SELECT TEAM_ID, TEAM_NAME FROM "dim_teams" ORDER BY TEAM_NAME ASC')
     teams_df = cursor.fetch_pandas_all()
 
-    cursor.execute("SELECT * FROM PROD.RAW.FCT_TRAINING_DATASET")
+    cursor.execute('SELECT * FROM "fct_training_dataset"')
     training_df = cursor.fetch_pandas_all()
     
     cursor.close()
@@ -59,8 +48,6 @@ def load_data(_conn):
 # --- MODEL LOADING ---
 @st.cache_resource
 def load_model():
-    """Loads the trained model from the .pkl file."""
-    # This part remains the same, loading a local file
     model_path = os.path.join(os.path.dirname(__file__), 'match_predictor.pkl')
     model = joblib.load(model_path)
     return model
@@ -71,19 +58,14 @@ try:
     matches_df, teams_df, training_df = load_data(conn)
     model = load_model()
 
-    # --- UI LAYOUT ---
     st.title("⚽ Football Analytics Dashboard")
     st.markdown("An interactive dashboard to explore match results and predict outcomes, powered by Snowflake, dbt, and Airflow.")
-
-    # Your existing UI code for the AI predictor and historical analysis will now work
-    # with the data loaded from Snowflake. The code below is the same as your last version.
 
     # --- SIDEBAR FOR TEAM SELECTION ---
     st.sidebar.header("Filter by Team")
     team_list = ["All Teams"] + teams_df['team_name'].tolist()
     selected_team = st.sidebar.selectbox("Select a Team", team_list)
 
-    # --- MAIN PAGE ---
     # --- AI MATCH PREDICTOR ---
     st.header("🔮 AI Match Predictor")
     
