@@ -1,0 +1,71 @@
+[
+  {
+    "logical_name": "dim_teams",
+    "snowflake_table": "PROD.DUCKDB_MIGRATED.DIM_TEAMS",
+    "write_success": true,
+    "duckdb_rows": 20,
+    "snowflake_rows": 20,
+    "chunks": 1,
+    "loaded_rows_reported": 20,
+    "copy_output": [
+      [
+        "nmlkonvyps/file0.txt",
+        "LOADED",
+        20,
+        20,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  {
+    "logical_name": "fct_matches",
+    "snowflake_table": "PROD.DUCKDB_MIGRATED.FCT_MATCHES",
+    "write_success": true,
+    "duckdb_rows": 100,
+    "snowflake_rows": 100,
+    "chunks": 1,
+    "loaded_rows_reported": 100,
+    "copy_output": [
+      [
+        "dqspsfwqis/file0.txt",
+        "LOADED",
+        100,
+        100,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  {
+    "logical_name": "fct_training_dataset",
+    "snowflake_table": "PROD.DUCKDB_MIGRATED.FCT_TRAINING_DATASET",
+    "write_success": true,
+    "duckdb_rows": 100,
+    "snowflake_rows": 100,
+    "chunks": 1,
+    "loaded_rows_reported": 100,
+    "copy_output": [
+      [
+        "byezyekzpv/file0.txt",
+        "LOADED",
+        100,
+        100,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  }
+]

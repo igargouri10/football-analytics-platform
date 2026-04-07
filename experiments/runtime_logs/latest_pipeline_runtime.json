@@ -1,0 +1,199 @@
+{
+  "stages": [
+    {
+      "stage_name": "dbt_run_duckdb_full_refresh",
+      "start_time_utc": "2026-04-06T05:32:03.611365+00:00",
+      "end_time_utc": "2026-04-06T05:32:10.608023+00:00",
+      "duration_seconds": 6.997,
+      "status": "success",
+      "metadata": {
+        "command": "dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project --target prod --full-refresh --no-partial-parse",
+        "returncode": 0,
+        "log_file": "/opt/airflow/experiments/runtime_logs/dbt_run_duckdb_full_refresh.log",
+        "pass": 4,
+        "warn": 0,
+        "error": 0,
+        "skip": 0,
+        "no_op": 0,
+        "total": 4,
+        "dbt_reported_duration_seconds": 2.04
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-06T05:32:12.203895+00:00",
+      "end_time_utc": "2026-04-06T05:32:22.910703+00:00",
+      "duration_seconds": 10.707,
+      "status": "success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 3,
+        "failed_count": 0,
+        "summary_file": "dbt_project/generated_tests/generation_summary.json"
+      }
+    },
+    {
+      "stage_name": "dbt_test_duckdb_with_llm",
+      "start_time_utc": "2026-04-06T05:32:24.880339+00:00",
+      "end_time_utc": "2026-04-06T05:32:32.715668+00:00",
+      "duration_seconds": 7.835,
+      "status": "success",
+      "metadata": {
+        "command": "dbt test --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project --target prod --no-partial-parse",
+        "returncode": 0,
+        "log_file": "/opt/airflow/experiments/runtime_logs/dbt_test_duckdb_with_llm.log",
+        "pass": 25,
+        "warn": 0,
+        "error": 0,
+        "skip": 0,
+        "no_op": 0,
+        "total": 25,
+        "dbt_reported_duration_seconds": 3.68,
+        "models_found": 4,
+        "data_tests_found": 25,
+        "sources_found": 1
+      }
+    },
+    {
+      "stage_name": "migrate_duckdb_to_snowflake",
+      "start_time_utc": "2026-04-06T05:32:35.197968+00:00",
+      "end_time_utc": "2026-04-06T05:32:57.841093+00:00",
+      "duration_seconds": 22.643,
+      "status": "success",
+      "metadata": {
+        "tables_attempted": 3,
+        "tables_loaded_successfully": 3,
+        "summary_file": "/opt/airflow/experiments/duckdb_to_snowflake_migration_summary.json",
+        "row_counts": {
+          "dim_teams": {
+            "duckdb_rows": 20,
+            "snowflake_rows": 20
+          },
+          "fct_matches": {
+            "duckdb_rows": 100,
+            "snowflake_rows": 100
+          },
+          "fct_training_dataset": {
+            "duckdb_rows": 100,
+            "snowflake_rows": 100
+          }
+        }
+      }
+    },
+    {
+      "stage_name": "validate_duckdb_vs_migrated_snowflake",
+      "start_time_utc": "2026-04-06T05:33:00.314481+00:00",
+      "end_time_utc": "2026-04-06T05:33:14.444375+00:00",
+      "duration_seconds": 14.13,
+      "status": "success",
+      "metadata": {
+        "tables_compared": 3,
+        "match_count": 3,
+        "mismatch_count": 0,
+        "summary_file": "/opt/airflow/experiments/duckdb_vs_migrated_snowflake_summary.json"
+      }
+    },
+    {
+      "stage_name": "run_multibatch_anomaly_experiment",
+      "start_time_utc": "2026-04-06T05:33:15.624342+00:00",
+      "end_time_utc": "2026-04-06T05:33:15.950564+00:00",
+      "duration_seconds": 0.326,
+      "status": "failed",
+      "metadata": {
+        "command": "/usr/local/bin/python /opt/airflow/experiments/run_multibatch_anomaly_experiment.py",
+        "returncode": 1,
+        "log_file": "/opt/airflow/experiments/runtime_logs/run_multibatch_anomaly_experiment.log",
+        "summary_file": "/opt/airflow/experiments/multibatch_anomaly_results/final_summary.json",
+        "manual_total_detected": 7,
+        "manual_total_anomalies": 16,
+        "manual_overall_detection_rate": 0.4375,
+        "llm_total_detected": 16,
+        "llm_total_anomalies": 16,
+        "llm_overall_detection_rate": 1.0,
+        "absolute_additional_detections": 9,
+        "relative_detection_count_improvement": 128.57
+      }
+    },
+    {
+      "stage_name": "run_multibatch_anomaly_experiment",
+      "start_time_utc": "2026-04-06T17:22:15.346205+00:00",
+      "end_time_utc": "2026-04-06T17:22:59.440987+00:00",
+      "duration_seconds": 44.095,
+      "status": "success",
+      "metadata": {
+        "command": "/usr/local/bin/python /opt/airflow/experiments/run_multibatch_anomaly_experiment.py",
+        "returncode": 0,
+        "log_file": "/opt/airflow/experiments/runtime_logs/run_multibatch_anomaly_experiment.log",
+        "summary_file": "/opt/airflow/experiments/multibatch_anomaly_results/final_summary.json",
+        "manual_total_detected": 7,
+        "manual_total_anomalies": 16,
+        "manual_overall_detection_rate": 0.4375,
+        "llm_total_detected": 16,
+        "llm_total_anomalies": 16,
+        "llm_overall_detection_rate": 1.0,
+        "absolute_additional_detections": 9,
+        "relative_detection_count_improvement": 128.57
+      }
+    },
+    {
+      "stage_name": "run_generated_test_usefulness_audit",
+      "start_time_utc": "2026-04-06T17:23:01.122911+00:00",
+      "end_time_utc": "2026-04-06T17:23:01.231855+00:00",
+      "duration_seconds": 0.109,
+      "status": "success",
+      "metadata": {
+        "command": "/usr/local/bin/python /opt/airflow/experiments/audit_generated_test_usefulness.py",
+        "returncode": 0,
+        "log_file": "/opt/airflow/experiments/runtime_logs/run_generated_test_usefulness_audit.log",
+        "summary_file": "/opt/airflow/experiments/usefulness_audit/generated_test_usefulness_summary.json",
+        "total_generated_test_items": 25,
+        "useful_count": 9,
+        "redundant_count": 4,
+        "executable_but_low_value_count": 12,
+        "invalid_or_non_executable_count": 0,
+        "useful_percentage_of_all_generated": 0.36,
+        "useful_percentage_of_nonredundant_executable": 0.4286
+      }
+    },
+    {
+      "stage_name": "compile_research_summary",
+      "start_time_utc": "2026-04-06T17:23:01.950333+00:00",
+      "end_time_utc": "2026-04-06T17:23:01.971788+00:00",
+      "duration_seconds": 0.021,
+      "status": "success",
+      "metadata": {
+        "summary_file": "/opt/airflow/experiments/research_artifacts/final_research_summary.json"
+      }
+    },
+    {
+      "stage_name": "run_generated_test_usefulness_audit",
+      "start_time_utc": "2026-04-06T17:46:45.172722+00:00",
+      "end_time_utc": "2026-04-06T17:46:45.325222+00:00",
+      "duration_seconds": 0.152,
+      "status": "success",
+      "metadata": {
+        "command": "/usr/local/bin/python /opt/airflow/experiments/audit_generated_test_usefulness.py",
+        "returncode": 0,
+        "log_file": "/opt/airflow/experiments/runtime_logs/run_generated_test_usefulness_audit.log",
+        "summary_file": "/opt/airflow/experiments/usefulness_audit/generated_test_usefulness_summary.json",
+        "total_generated_test_items": 25,
+        "useful_count": 9,
+        "redundant_count": 4,
+        "executable_but_low_value_count": 12,
+        "invalid_or_non_executable_count": 0,
+        "useful_percentage_of_all_generated": 0.36,
+        "useful_percentage_of_nonredundant_executable": 0.4286
+      }
+    },
+    {
+      "stage_name": "compile_research_summary",
+      "start_time_utc": "2026-04-06T17:46:46.315844+00:00",
+      "end_time_utc": "2026-04-06T17:46:46.334199+00:00",
+      "duration_seconds": 0.018,
+      "status": "success",
+      "metadata": {
+        "summary_file": "/opt/airflow/experiments/research_artifacts/final_research_summary.json"
+      }
+    }
+  ]
+}

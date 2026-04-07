@@ -1,0 +1,275 @@
+{
+  "manual_only": {
+    "condition": "manual_only",
+    "schema_source": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\models\\marts\\schema.manual_backup.yml.txt",
+    "anomaly_manifest": [
+      {
+        "id": "null_dim_teams_team_id",
+        "target": "dim_teams.team_id=133600"
+      },
+      {
+        "id": "duplicate_dim_teams_team_id",
+        "target": "dim_teams.team_id=133599"
+      },
+      {
+        "id": "null_dim_teams_team_name",
+        "target": "dim_teams.team_id=133601"
+      },
+      {
+        "id": "null_fct_matches_match_id",
+        "target": "fct_matches.match_id=1818396"
+      },
+      {
+        "id": "duplicate_fct_matches_match_id",
+        "target": "fct_matches.match_id=1818395"
+      },
+      {
+        "id": "null_fct_matches_match_status",
+        "target": "fct_matches.match_id=1818397"
+      },
+      {
+        "id": "invalid_fct_matches_match_status",
+        "target": "fct_matches.match_id=1818398"
+      },
+      {
+        "id": "null_fct_matches_home_team_id",
+        "target": "fct_matches.match_id=1818399"
+      },
+      {
+        "id": "null_fct_matches_away_team_id",
+        "target": "fct_matches.match_id=1818400"
+      },
+      {
+        "id": "null_fct_matches_match_date",
+        "target": "fct_matches.match_id=1818401"
+      }
+    ],
+    "failed_tests": [
+      "not_null_dim_teams_team_id",
+      "not_null_fct_matches_match_id",
+      "unique_dim_teams_team_id",
+      "unique_fct_matches_match_id"
+    ],
+    "returncode": 1,
+    "detected_count": 4,
+    "total_anomalies": 10,
+    "detection_results": [
+      {
+        "anomaly_id": "null_dim_teams_team_id",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_dim_teams_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "duplicate_dim_teams_team_id",
+        "detected": true,
+        "detecting_tests": [
+          "unique_dim_teams_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_dim_teams_team_name",
+        "detected": false,
+        "detecting_tests": [
+          "not_null_dim_teams_team_name"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_match_id",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_fct_matches_match_id"
+        ]
+      },
+      {
+        "anomaly_id": "duplicate_fct_matches_match_id",
+        "detected": true,
+        "detecting_tests": [
+          "unique_fct_matches_match_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_match_status",
+        "detected": false,
+        "detecting_tests": [
+          "not_null_fct_matches_match_status"
+        ]
+      },
+      {
+        "anomaly_id": "invalid_fct_matches_match_status",
+        "detected": false,
+        "detecting_tests": [
+          "accepted_values_fct_matches_match_status"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_home_team_id",
+        "detected": false,
+        "detecting_tests": [
+          "not_null_fct_matches_home_team_id",
+          "not_null_fct_training_dataset_home_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_away_team_id",
+        "detected": false,
+        "detecting_tests": [
+          "not_null_fct_matches_away_team_id",
+          "not_null_fct_training_dataset_away_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_match_date",
+        "detected": false,
+        "detecting_tests": [
+          "not_null_fct_matches_match_date",
+          "not_null_fct_training_dataset_match_date"
+        ]
+      }
+    ],
+    "log_file": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\anomaly_results\\manual_only_dbt_test.log"
+  },
+  "manual_plus_llm": {
+    "condition": "manual_plus_llm",
+    "schema_source": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\models\\marts\\schema.llm_merged.yml.txt",
+    "anomaly_manifest": [
+      {
+        "id": "null_dim_teams_team_id",
+        "target": "dim_teams.team_id=133600"
+      },
+      {
+        "id": "duplicate_dim_teams_team_id",
+        "target": "dim_teams.team_id=133599"
+      },
+      {
+        "id": "null_dim_teams_team_name",
+        "target": "dim_teams.team_id=133601"
+      },
+      {
+        "id": "null_fct_matches_match_id",
+        "target": "fct_matches.match_id=1818396"
+      },
+      {
+        "id": "duplicate_fct_matches_match_id",
+        "target": "fct_matches.match_id=1818395"
+      },
+      {
+        "id": "null_fct_matches_match_status",
+        "target": "fct_matches.match_id=1818397"
+      },
+      {
+        "id": "invalid_fct_matches_match_status",
+        "target": "fct_matches.match_id=1818398"
+      },
+      {
+        "id": "null_fct_matches_home_team_id",
+        "target": "fct_matches.match_id=1818399"
+      },
+      {
+        "id": "null_fct_matches_away_team_id",
+        "target": "fct_matches.match_id=1818400"
+      },
+      {
+        "id": "null_fct_matches_match_date",
+        "target": "fct_matches.match_id=1818401"
+      }
+    ],
+    "failed_tests": [
+      "accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress",
+      "not_null_dim_teams_team_id",
+      "not_null_dim_teams_team_name",
+      "not_null_fct_matches_away_team_id",
+      "not_null_fct_matches_home_team_id",
+      "not_null_fct_matches_match_date",
+      "not_null_fct_matches_match_id",
+      "not_null_fct_matches_match_status",
+      "not_null_fct_training_dataset_away_team_id",
+      "not_null_fct_training_dataset_home_team_id",
+      "not_null_fct_training_dataset_match_date",
+      "not_null_fct_training_dataset_match_id",
+      "unique_dim_teams_team_id",
+      "unique_fct_matches_match_id",
+      "unique_fct_training_dataset_match_id"
+    ],
+    "returncode": 1,
+    "detected_count": 10,
+    "total_anomalies": 10,
+    "detection_results": [
+      {
+        "anomaly_id": "null_dim_teams_team_id",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_dim_teams_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "duplicate_dim_teams_team_id",
+        "detected": true,
+        "detecting_tests": [
+          "unique_dim_teams_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_dim_teams_team_name",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_dim_teams_team_name"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_match_id",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_fct_matches_match_id"
+        ]
+      },
+      {
+        "anomaly_id": "duplicate_fct_matches_match_id",
+        "detected": true,
+        "detecting_tests": [
+          "unique_fct_matches_match_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_match_status",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_fct_matches_match_status"
+        ]
+      },
+      {
+        "anomaly_id": "invalid_fct_matches_match_status",
+        "detected": true,
+        "detecting_tests": [
+          "accepted_values_fct_matches_match_status"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_home_team_id",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_fct_matches_home_team_id",
+          "not_null_fct_training_dataset_home_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_away_team_id",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_fct_matches_away_team_id",
+          "not_null_fct_training_dataset_away_team_id"
+        ]
+      },
+      {
+        "anomaly_id": "null_fct_matches_match_date",
+        "detected": true,
+        "detecting_tests": [
+          "not_null_fct_matches_match_date",
+          "not_null_fct_training_dataset_match_date"
+        ]
+      }
+    ],
+    "log_file": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\anomaly_results\\manual_plus_llm_dbt_test.log"
+  }
+}

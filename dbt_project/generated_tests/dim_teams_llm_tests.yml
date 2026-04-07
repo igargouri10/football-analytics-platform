@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: dim_teams
+    columns:
+      - name: team_id
+        tests:
+          - not_null
+          - unique
+      - name: team_name
+        tests:
+          - not_null

@@ -1,0 +1,75 @@
+[0m05:32:26  Running with dbt=1.11.7
+[0m05:32:26  Registered adapter: duckdb=1.8.0
+[0m05:32:27  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on 'fct_matches' in
+package 'football_analytics' (models/marts/schema.yml). Arguments to generic
+tests should be nested under the `arguments` property.
+[0m05:32:28  Found 4 models, 25 data tests, 1 source, 456 macros
+[0m05:32:28  
+[0m05:32:28  Concurrency: 1 threads (target='prod')
+[0m05:32:28  
+[0m05:32:28  1 of 25 START test accepted_values_fct_matches_match_status__Match_Finished__Scheduled__Postponed__Cancelled  [RUN]
+[0m05:32:28  1 of 25 PASS accepted_values_fct_matches_match_status__Match_Finished__Scheduled__Postponed__Cancelled  [[32mPASS[0m in 0.14s]
+[0m05:32:28  2 of 25 START test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [RUN]
+[0m05:32:28  2 of 25 PASS accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [[32mPASS[0m in 0.12s]
+[0m05:32:28  3 of 25 START test not_null_dim_teams_team_id .................................. [RUN]
+[0m05:32:28  3 of 25 PASS not_null_dim_teams_team_id ........................................ [[32mPASS[0m in 0.11s]
+[0m05:32:28  4 of 25 START test not_null_dim_teams_team_name ................................ [RUN]
+[0m05:32:29  4 of 25 PASS not_null_dim_teams_team_name ...................................... [[32mPASS[0m in 0.13s]
+[0m05:32:29  5 of 25 START test not_null_fct_matches_away_team_id ........................... [RUN]
+[0m05:32:29  5 of 25 PASS not_null_fct_matches_away_team_id ................................. [[32mPASS[0m in 0.14s]
+[0m05:32:29  6 of 25 START test not_null_fct_matches_away_team_name ......................... [RUN]
+[0m05:32:29  6 of 25 PASS not_null_fct_matches_away_team_name ............................... [[32mPASS[0m in 0.11s]
+[0m05:32:29  7 of 25 START test not_null_fct_matches_away_team_score ........................ [RUN]
+[0m05:32:29  7 of 25 PASS not_null_fct_matches_away_team_score .............................. [[32mPASS[0m in 0.11s]
+[0m05:32:29  8 of 25 START test not_null_fct_matches_home_team_id ........................... [RUN]
+[0m05:32:29  8 of 25 PASS not_null_fct_matches_home_team_id ................................. [[32mPASS[0m in 0.12s]
+[0m05:32:29  9 of 25 START test not_null_fct_matches_home_team_name ......................... [RUN]
+[0m05:32:29  9 of 25 PASS not_null_fct_matches_home_team_name ............................... [[32mPASS[0m in 0.13s]
+[0m05:32:29  10 of 25 START test not_null_fct_matches_home_team_score ....................... [RUN]
+[0m05:32:29  10 of 25 PASS not_null_fct_matches_home_team_score ............................. [[32mPASS[0m in 0.12s]
+[0m05:32:29  11 of 25 START test not_null_fct_matches_league_id ............................. [RUN]
+[0m05:32:30  11 of 25 PASS not_null_fct_matches_league_id ................................... [[32mPASS[0m in 0.13s]
+[0m05:32:30  12 of 25 START test not_null_fct_matches_match_date ............................ [RUN]
+[0m05:32:30  12 of 25 PASS not_null_fct_matches_match_date .................................. [[32mPASS[0m in 0.16s]
+[0m05:32:30  13 of 25 START test not_null_fct_matches_match_id .............................. [RUN]
+[0m05:32:30  13 of 25 PASS not_null_fct_matches_match_id .................................... [[32mPASS[0m in 0.15s]
+[0m05:32:30  14 of 25 START test not_null_fct_matches_match_status .......................... [RUN]
+[0m05:32:30  14 of 25 PASS not_null_fct_matches_match_status ................................ [[32mPASS[0m in 0.13s]
+[0m05:32:30  15 of 25 START test not_null_fct_matches_season ................................ [RUN]
+[0m05:32:30  15 of 25 PASS not_null_fct_matches_season ...................................... [[32mPASS[0m in 0.11s]
+[0m05:32:30  16 of 25 START test not_null_fct_training_dataset_away_team_id ................. [RUN]
+[0m05:32:30  16 of 25 PASS not_null_fct_training_dataset_away_team_id ....................... [[32mPASS[0m in 0.13s]
+[0m05:32:30  17 of 25 START test not_null_fct_training_dataset_away_team_name ............... [RUN]
+[0m05:32:30  17 of 25 PASS not_null_fct_training_dataset_away_team_name ..................... [[32mPASS[0m in 0.13s]
+[0m05:32:30  18 of 25 START test not_null_fct_training_dataset_home_team_id ................. [RUN]
+[0m05:32:31  18 of 25 PASS not_null_fct_training_dataset_home_team_id ....................... [[32mPASS[0m in 0.12s]
+[0m05:32:31  19 of 25 START test not_null_fct_training_dataset_home_team_name ............... [RUN]
+[0m05:32:31  19 of 25 PASS not_null_fct_training_dataset_home_team_name ..................... [[32mPASS[0m in 0.13s]
+[0m05:32:31  20 of 25 START test not_null_fct_training_dataset_match_date ................... [RUN]
+[0m05:32:31  20 of 25 PASS not_null_fct_training_dataset_match_date ......................... [[32mPASS[0m in 0.14s]
+[0m05:32:31  21 of 25 START test not_null_fct_training_dataset_match_id ..................... [RUN]
+[0m05:32:31  21 of 25 PASS not_null_fct_training_dataset_match_id ........................... [[32mPASS[0m in 0.14s]
+[0m05:32:31  22 of 25 START test not_null_fct_training_dataset_match_result ................. [RUN]
+[0m05:32:31  22 of 25 PASS not_null_fct_training_dataset_match_result ....................... [[32mPASS[0m in 0.12s]
+[0m05:32:31  23 of 25 START test unique_dim_teams_team_id ................................... [RUN]
+[0m05:32:31  23 of 25 PASS unique_dim_teams_team_id ......................................... [[32mPASS[0m in 0.10s]
+[0m05:32:31  24 of 25 START test unique_fct_matches_match_id ................................ [RUN]
+[0m05:32:31  24 of 25 PASS unique_fct_matches_match_id ...................................... [[32mPASS[0m in 0.10s]
+[0m05:32:31  25 of 25 START test unique_fct_training_dataset_match_id ....................... [RUN]
+[0m05:32:31  25 of 25 PASS unique_fct_training_dataset_match_id ............................. [[32mPASS[0m in 0.12s]
+[0m05:32:31  
+[0m05:32:31  Finished running 25 data tests in 0 hours 0 minutes and 3.68 seconds (3.68s).
+[0m05:32:32  
+[0m05:32:32  [32mCompleted successfully[0m
+[0m05:32:32  
+[0m05:32:32  Done. PASS=25 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=25
+[0m05:32:32  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+

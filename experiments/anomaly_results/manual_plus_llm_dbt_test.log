@@ -1,0 +1,134 @@
+06:16:02  Running with dbt=1.11.7
+06:16:02  Registered adapter: duckdb=1.10.1
+06:16:04  Found 4 models, 23 data tests, 1 source, 475 macros
+06:16:04  
+06:16:04  Concurrency: 1 threads (target='dev')
+06:16:04  
+06:16:05  1 of 23 START test accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress  [RUN]
+06:16:05  1 of 23 FAIL 1 accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress  [FAIL 1 in 0.06s]
+06:16:05  2 of 23 START test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [RUN]
+06:16:05  2 of 23 PASS accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [PASS in 0.04s]
+06:16:05  3 of 23 START test not_null_dim_teams_team_id .................................. [RUN]
+06:16:05  3 of 23 FAIL 1 not_null_dim_teams_team_id ...................................... [FAIL 1 in 0.03s]
+06:16:05  4 of 23 START test not_null_dim_teams_team_name ................................ [RUN]
+06:16:05  4 of 23 FAIL 1 not_null_dim_teams_team_name .................................... [FAIL 1 in 0.03s]
+06:16:05  5 of 23 START test not_null_fct_matches_away_team_id ........................... [RUN]
+06:16:05  5 of 23 FAIL 1 not_null_fct_matches_away_team_id ............................... [FAIL 1 in 0.03s]
+06:16:05  6 of 23 START test not_null_fct_matches_away_team_name ......................... [RUN]
+06:16:05  6 of 23 PASS not_null_fct_matches_away_team_name ............................... [PASS in 0.03s]
+06:16:05  7 of 23 START test not_null_fct_matches_away_team_score ........................ [RUN]
+06:16:05  7 of 23 PASS not_null_fct_matches_away_team_score .............................. [PASS in 0.03s]
+06:16:05  8 of 23 START test not_null_fct_matches_home_team_id ........................... [RUN]
+06:16:05  8 of 23 FAIL 1 not_null_fct_matches_home_team_id ............................... [FAIL 1 in 0.03s]
+06:16:05  9 of 23 START test not_null_fct_matches_home_team_name ......................... [RUN]
+06:16:05  9 of 23 PASS not_null_fct_matches_home_team_name ............................... [PASS in 0.03s]
+06:16:05  10 of 23 START test not_null_fct_matches_home_team_score ....................... [RUN]
+06:16:05  10 of 23 PASS not_null_fct_matches_home_team_score ............................. [PASS in 0.03s]
+06:16:05  11 of 23 START test not_null_fct_matches_league_id ............................. [RUN]
+06:16:05  11 of 23 PASS not_null_fct_matches_league_id ................................... [PASS in 0.03s]
+06:16:05  12 of 23 START test not_null_fct_matches_match_date ............................ [RUN]
+06:16:05  12 of 23 FAIL 1 not_null_fct_matches_match_date ................................ [FAIL 1 in 0.03s]
+06:16:05  13 of 23 START test not_null_fct_matches_match_id .............................. [RUN]
+06:16:05  13 of 23 FAIL 1 not_null_fct_matches_match_id .................................. [FAIL 1 in 0.03s]
+06:16:05  14 of 23 START test not_null_fct_matches_match_status .......................... [RUN]
+06:16:05  14 of 23 FAIL 1 not_null_fct_matches_match_status .............................. [FAIL 1 in 0.03s]
+06:16:05  15 of 23 START test not_null_fct_matches_season ................................ [RUN]
+06:16:05  15 of 23 PASS not_null_fct_matches_season ...................................... [PASS in 0.03s]
+06:16:05  16 of 23 START test not_null_fct_training_dataset_away_team_id ................. [RUN]
+06:16:05  16 of 23 FAIL 1 not_null_fct_training_dataset_away_team_id ..................... [FAIL 1 in 0.03s]
+06:16:05  17 of 23 START test not_null_fct_training_dataset_home_team_id ................. [RUN]
+06:16:05  17 of 23 FAIL 1 not_null_fct_training_dataset_home_team_id ..................... [FAIL 1 in 0.04s]
+06:16:05  18 of 23 START test not_null_fct_training_dataset_match_date ................... [RUN]
+06:16:05  18 of 23 FAIL 1 not_null_fct_training_dataset_match_date ....................... [FAIL 1 in 0.03s]
+06:16:05  19 of 23 START test not_null_fct_training_dataset_match_id ..................... [RUN]
+06:16:05  19 of 23 FAIL 1 not_null_fct_training_dataset_match_id ......................... [FAIL 1 in 0.03s]
+06:16:05  20 of 23 START test not_null_fct_training_dataset_match_result ................. [RUN]
+06:16:05  20 of 23 PASS not_null_fct_training_dataset_match_result ....................... [PASS in 0.04s]
+06:16:05  21 of 23 START test unique_dim_teams_team_id ................................... [RUN]
+06:16:05  21 of 23 FAIL 1 unique_dim_teams_team_id ....................................... [FAIL 1 in 0.02s]
+06:16:05  22 of 23 START test unique_fct_matches_match_id ................................ [RUN]
+06:16:06  22 of 23 FAIL 1 unique_fct_matches_match_id .................................... [FAIL 1 in 0.04s]
+06:16:06  23 of 23 START test unique_fct_training_dataset_match_id ....................... [RUN]
+06:16:06  23 of 23 FAIL 1 unique_fct_training_dataset_match_id ........................... [FAIL 1 in 0.03s]
+06:16:06  
+06:16:06  Finished running 23 data tests in 0 hours 0 minutes and 1.19 seconds (1.19s).
+06:16:06  
+06:16:06  Completed with 15 errors, 0 partial successes, and 0 warnings:
+06:16:06  
+06:16:06  Failure in test accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\accepted_values_fct_matches_36b9262846303f997bb983fd7711a47f.sql
+06:16:06  
+06:16:06  Failure in test not_null_dim_teams_team_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_dim_teams_team_id.sql
+06:16:06  
+06:16:06  Failure in test not_null_dim_teams_team_name (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_dim_teams_team_name.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_matches_away_team_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_away_team_id.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_matches_home_team_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_home_team_id.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_matches_match_date (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_match_date.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_matches_match_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_match_id.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_matches_match_status (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_match_status.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_training_dataset_away_team_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_away_team_id.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_training_dataset_home_team_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_home_team_id.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_training_dataset_match_date (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_date.sql
+06:16:06  
+06:16:06  Failure in test not_null_fct_training_dataset_match_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_id.sql
+06:16:06  
+06:16:06  Failure in test unique_dim_teams_team_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_dim_teams_team_id.sql
+06:16:06  
+06:16:06  Failure in test unique_fct_matches_match_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_matches_match_id.sql
+06:16:06  
+06:16:06  Failure in test unique_fct_training_dataset_match_id (models\marts\schema.yml)
+06:16:06    Got 1 result, configured to fail if != 0
+06:16:06  
+06:16:06    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_training_dataset_match_id.sql
+06:16:06  
+06:16:06  Done. PASS=8 WARN=0 ERROR=15 SKIP=0 NO-OP=0 TOTAL=23
+

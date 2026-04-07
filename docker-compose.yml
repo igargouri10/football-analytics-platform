@@ -13,7 +13,9 @@ x-airflow-common: &airflow-common
     - ./airflow/plugins:/opt/airflow/plugins
     - ./scripts:/opt/airflow/scripts
     - ./dbt_project:/opt/airflow/dbt_project
-    # ADDED THIS LINE to make the dashboard folder available to Airflow
+    - ./dashboard:/opt/airflow/dashboard
+    - ./llm_tests:/opt/airflow/llm_tests
+    - ./experiments:/opt/airflow/experiments
     - ./dashboard:/opt/airflow/dashboard
   depends_on:
     - postgres

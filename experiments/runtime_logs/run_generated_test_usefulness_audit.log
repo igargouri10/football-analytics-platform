@@ -1,0 +1,13 @@
+Saved JSON summary to /opt/airflow/experiments/usefulness_audit/generated_test_usefulness_summary.json
+Saved CSV details to /opt/airflow/experiments/usefulness_audit/generated_test_usefulness_details.csv
+{
+  "total_generated_test_items": 25,
+  "useful_count": 9,
+  "redundant_count": 4,
+  "executable_but_low_value_count": 12,
+  "invalid_or_non_executable_count": 0,
+  "useful_percentage_of_all_generated": 0.36,
+  "redundant_percentage_of_all_generated": 0.16,
+  "useful_percentage_of_nonredundant_executable": 0.4286
+}
+

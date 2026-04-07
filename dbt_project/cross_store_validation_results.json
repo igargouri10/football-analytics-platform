@@ -1,0 +1,175 @@
+[
+  {
+    "table": "stg_matches",
+    "duckdb_rows": 100,
+    "snowflake_rows": 100,
+    "row_diff": 0,
+    "checksum_match": true,
+    "duckdb_checksum": "8b8ad756c337b130402a95a5def9cca6",
+    "snowflake_checksum": "8b8ad756c337b130402a95a5def9cca6",
+    "status": "MATCH",
+    "null_summary": {
+      "match_data": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      }
+    }
+  },
+  {
+    "table": "dim_teams",
+    "duckdb_rows": 20,
+    "snowflake_rows": 20,
+    "row_diff": 0,
+    "checksum_match": true,
+    "duckdb_checksum": "98dba63d9cda6943f1f2864b421e206c",
+    "snowflake_checksum": "98dba63d9cda6943f1f2864b421e206c",
+    "status": "MATCH",
+    "null_summary": {
+      "team_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "team_name": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      }
+    }
+  },
+  {
+    "table": "fct_matches",
+    "duckdb_rows": 100,
+    "snowflake_rows": 100,
+    "row_diff": 0,
+    "checksum_match": true,
+    "duckdb_checksum": "29e9958910184a1982233d1c8d0ab19e",
+    "snowflake_checksum": "29e9958910184a1982233d1c8d0ab19e",
+    "status": "MATCH",
+    "null_summary": {
+      "match_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "league_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "season": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "match_date": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "match_status": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "home_team_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "home_team_name": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "home_team_score": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "away_team_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "away_team_name": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "away_team_score": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      }
+    }
+  },
+  {
+    "table": "fct_training_dataset",
+    "duckdb_rows": 100,
+    "snowflake_rows": 100,
+    "row_diff": 0,
+    "checksum_match": false,
+    "duckdb_checksum": "9c56ab1c452df4b80f706574249cf7e0",
+    "snowflake_checksum": "967cadc63a8b2ae054d7078466f53c00",
+    "status": "MISMATCH",
+    "null_summary": {
+      "match_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "match_date": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "match_result": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "home_team_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "home_team_name": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "home_avg_goals_scored_last_5": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "home_avg_goals_conceded_last_5": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "away_team_id": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "away_team_name": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "away_avg_goals_scored_last_5": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      },
+      "away_avg_goals_conceded_last_5": {
+        "duckdb_nulls": 0,
+        "snowflake_nulls": 0,
+        "match": true
+      }
+    }
+  }
+]

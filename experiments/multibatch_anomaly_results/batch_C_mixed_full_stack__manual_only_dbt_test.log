@@ -1,0 +1,36 @@
+[0m17:22:45  Running with dbt=1.11.7
+[0m17:22:46  Registered adapter: duckdb=1.8.0
+[0m17:22:47  Found 4 models, 4 data tests, 1 source, 456 macros
+[0m17:22:47  
+[0m17:22:47  Concurrency: 1 threads (target='dev')
+[0m17:22:47  
+[0m17:22:47  1 of 4 START test not_null_dim_teams_team_id ................................... [RUN]
+[0m17:22:48  1 of 4 FAIL 1 not_null_dim_teams_team_id ....................................... [[31mFAIL 1[0m in 0.13s]
+[0m17:22:48  2 of 4 START test not_null_fct_matches_match_id ................................ [RUN]
+[0m17:22:48  2 of 4 PASS not_null_fct_matches_match_id ...................................... [[32mPASS[0m in 0.09s]
+[0m17:22:48  3 of 4 START test unique_dim_teams_team_id ..................................... [RUN]
+[0m17:22:48  3 of 4 FAIL 1 unique_dim_teams_team_id ......................................... [[31mFAIL 1[0m in 0.11s]
+[0m17:22:48  4 of 4 START test unique_fct_matches_match_id .................................. [RUN]
+[0m17:22:48  4 of 4 FAIL 1 unique_fct_matches_match_id ...................................... [[31mFAIL 1[0m in 0.17s]
+[0m17:22:48  
+[0m17:22:48  Finished running 4 data tests in 0 hours 0 minutes and 0.80 seconds (0.80s).
+[0m17:22:48  
+[0m17:22:48  [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m17:22:48  
+[0m17:22:48  [31mFailure in test not_null_dim_teams_team_id (models/marts/schema.yml)[0m
+[0m17:22:48    Got 1 result, configured to fail if != 0
+[0m17:22:48  
+[0m17:22:48    compiled code at target/compiled/football_analytics/models/marts/schema.yml/not_null_dim_teams_team_id.sql
+[0m17:22:48  
+[0m17:22:48  [31mFailure in test unique_dim_teams_team_id (models/marts/schema.yml)[0m
+[0m17:22:48    Got 1 result, configured to fail if != 0
+[0m17:22:48  
+[0m17:22:48    compiled code at target/compiled/football_analytics/models/marts/schema.yml/unique_dim_teams_team_id.sql
+[0m17:22:48  
+[0m17:22:48  [31mFailure in test unique_fct_matches_match_id (models/marts/schema.yml)[0m
+[0m17:22:48    Got 1 result, configured to fail if != 0
+[0m17:22:48  
+[0m17:22:48    compiled code at target/compiled/football_analytics/models/marts/schema.yml/unique_fct_matches_match_id.sql
+[0m17:22:48  
+[0m17:22:48  Done. PASS=1 WARN=0 ERROR=3 SKIP=0 NO-OP=0 TOTAL=4
+

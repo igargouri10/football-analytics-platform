@@ -1,0 +1,41 @@
+06:15:52  Running with dbt=1.11.7
+06:15:52  Registered adapter: duckdb=1.10.1
+06:15:55  Found 4 models, 4 data tests, 1 source, 475 macros
+06:15:55  
+06:15:55  Concurrency: 1 threads (target='dev')
+06:15:55  
+06:15:56  1 of 4 START test not_null_dim_teams_team_id ................................... [RUN]
+06:15:56  1 of 4 FAIL 1 not_null_dim_teams_team_id ....................................... [FAIL 1 in 0.08s]
+06:15:56  2 of 4 START test not_null_fct_matches_match_id ................................ [RUN]
+06:15:56  2 of 4 FAIL 1 not_null_fct_matches_match_id .................................... [FAIL 1 in 0.04s]
+06:15:56  3 of 4 START test unique_dim_teams_team_id ..................................... [RUN]
+06:15:56  3 of 4 FAIL 1 unique_dim_teams_team_id ......................................... [FAIL 1 in 0.03s]
+06:15:56  4 of 4 START test unique_fct_matches_match_id .................................. [RUN]
+06:15:56  4 of 4 FAIL 1 unique_fct_matches_match_id ...................................... [FAIL 1 in 0.03s]
+06:15:56  
+06:15:56  Finished running 4 data tests in 0 hours 0 minutes and 0.68 seconds (0.68s).
+06:15:56  
+06:15:56  Completed with 4 errors, 0 partial successes, and 0 warnings:
+06:15:56  
+06:15:56  Failure in test not_null_dim_teams_team_id (models\marts\schema.yml)
+06:15:56    Got 1 result, configured to fail if != 0
+06:15:56  
+06:15:56    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_dim_teams_team_id.sql
+06:15:56  
+06:15:56  Failure in test not_null_fct_matches_match_id (models\marts\schema.yml)
+06:15:56    Got 1 result, configured to fail if != 0
+06:15:56  
+06:15:56    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_match_id.sql
+06:15:56  
+06:15:56  Failure in test unique_dim_teams_team_id (models\marts\schema.yml)
+06:15:56    Got 1 result, configured to fail if != 0
+06:15:56  
+06:15:56    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_dim_teams_team_id.sql
+06:15:56  
+06:15:56  Failure in test unique_fct_matches_match_id (models\marts\schema.yml)
+06:15:56    Got 1 result, configured to fail if != 0
+06:15:56  
+06:15:56    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_matches_match_id.sql
+06:15:56  
+06:15:56  Done. PASS=0 WARN=0 ERROR=4 SKIP=0 NO-OP=0 TOTAL=4
+

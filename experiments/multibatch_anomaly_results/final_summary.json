@@ -1,0 +1,569 @@
+{
+  "batches": [
+    {
+      "batch_id": "batch_A_key_integrity",
+      "description": "Core key-integrity anomalies in dimension and fact tables."
+    },
+    {
+      "batch_id": "batch_B_semantic_domain",
+      "description": "Semantic/domain and completeness anomalies primarily targeted by the LLM-expanded test layer."
+    },
+    {
+      "batch_id": "batch_C_mixed_full_stack",
+      "description": "Mixed anomalies spanning dimension, fact, and downstream propagated effects."
+    }
+  ],
+  "manual_only": {
+    "per_batch_results": [
+      {
+        "batch_id": "batch_A_key_integrity",
+        "condition": "manual_only",
+        "schema_source": "/opt/airflow/dbt_project/models/marts/schema.manual_backup.yml.txt",
+        "returncode": 1,
+        "failed_tests": [
+          "not_null_dim_teams_team_id",
+          "not_null_fct_matches_match_id",
+          "unique_dim_teams_team_id",
+          "unique_fct_matches_match_id"
+        ],
+        "log_file": "/opt/airflow/experiments/multibatch_anomaly_results/batch_A_key_integrity__manual_only_dbt_test.log",
+        "anomaly_manifest": [
+          {
+            "id": "null_dim_teams_team_id",
+            "target": "dim_teams.team_id=133600"
+          },
+          {
+            "id": "duplicate_dim_teams_team_id",
+            "target": "dim_teams.team_id=133599"
+          },
+          {
+            "id": "null_fct_matches_match_id",
+            "target": "fct_matches.match_id=1818396"
+          },
+          {
+            "id": "duplicate_fct_matches_match_id",
+            "target": "fct_matches.match_id=1818395"
+          }
+        ],
+        "detection_results": [
+          {
+            "anomaly_id": "null_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133600"
+          },
+          {
+            "anomaly_id": "duplicate_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133599"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_match_id",
+              "not_null_fct_training_dataset_match_id"
+            ],
+            "target": "fct_matches.match_id=1818396"
+          },
+          {
+            "anomaly_id": "duplicate_fct_matches_match_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_fct_matches_match_id",
+              "unique_fct_training_dataset_match_id"
+            ],
+            "target": "fct_matches.match_id=1818395"
+          }
+        ],
+        "detected_count": 4,
+        "total_anomalies": 4,
+        "detection_rate": 1.0
+      },
+      {
+        "batch_id": "batch_B_semantic_domain",
+        "condition": "manual_only",
+        "schema_source": "/opt/airflow/dbt_project/models/marts/schema.manual_backup.yml.txt",
+        "returncode": 0,
+        "failed_tests": [],
+        "log_file": "/opt/airflow/experiments/multibatch_anomaly_results/batch_B_semantic_domain__manual_only_dbt_test.log",
+        "anomaly_manifest": [
+          {
+            "id": "null_dim_teams_team_name",
+            "target": "dim_teams.team_id=133602"
+          },
+          {
+            "id": "null_fct_matches_match_status",
+            "target": "fct_matches.match_id=1818405"
+          },
+          {
+            "id": "invalid_fct_matches_match_status",
+            "target": "fct_matches.match_id=1818406"
+          },
+          {
+            "id": "null_fct_matches_home_team_id",
+            "target": "fct_matches.match_id=1818407"
+          },
+          {
+            "id": "null_fct_matches_away_team_id",
+            "target": "fct_matches.match_id=1818408"
+          },
+          {
+            "id": "null_fct_matches_match_date",
+            "target": "fct_matches.match_id=1818409"
+          }
+        ],
+        "detection_results": [
+          {
+            "anomaly_id": "null_dim_teams_team_name",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_dim_teams_team_name"
+            ],
+            "target": "dim_teams.team_id=133602"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_status",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_fct_matches_match_status"
+            ],
+            "target": "fct_matches.match_id=1818405"
+          },
+          {
+            "anomaly_id": "invalid_fct_matches_match_status",
+            "detected": false,
+            "detecting_tests": [
+              "accepted_values_fct_matches_match_status"
+            ],
+            "target": "fct_matches.match_id=1818406"
+          },
+          {
+            "anomaly_id": "null_fct_matches_home_team_id",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_fct_matches_home_team_id",
+              "not_null_fct_training_dataset_home_team_id"
+            ],
+            "target": "fct_matches.match_id=1818407"
+          },
+          {
+            "anomaly_id": "null_fct_matches_away_team_id",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_fct_matches_away_team_id",
+              "not_null_fct_training_dataset_away_team_id"
+            ],
+            "target": "fct_matches.match_id=1818408"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_date",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_fct_matches_match_date",
+              "not_null_fct_training_dataset_match_date"
+            ],
+            "target": "fct_matches.match_id=1818409"
+          }
+        ],
+        "detected_count": 0,
+        "total_anomalies": 6,
+        "detection_rate": 0.0
+      },
+      {
+        "batch_id": "batch_C_mixed_full_stack",
+        "condition": "manual_only",
+        "schema_source": "/opt/airflow/dbt_project/models/marts/schema.manual_backup.yml.txt",
+        "returncode": 1,
+        "failed_tests": [
+          "not_null_dim_teams_team_id",
+          "unique_dim_teams_team_id",
+          "unique_fct_matches_match_id"
+        ],
+        "log_file": "/opt/airflow/experiments/multibatch_anomaly_results/batch_C_mixed_full_stack__manual_only_dbt_test.log",
+        "anomaly_manifest": [
+          {
+            "id": "null_dim_teams_team_id",
+            "target": "dim_teams.team_id=133610"
+          },
+          {
+            "id": "duplicate_dim_teams_team_id",
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "id": "null_dim_teams_team_name",
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "id": "duplicate_fct_matches_match_id",
+            "target": "fct_matches.match_id=1818415"
+          },
+          {
+            "id": "null_fct_matches_home_team_id",
+            "target": "fct_matches.match_id=1818416"
+          },
+          {
+            "id": "null_fct_matches_match_date",
+            "target": "fct_matches.match_id=1818417"
+          }
+        ],
+        "detection_results": [
+          {
+            "anomaly_id": "null_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133610"
+          },
+          {
+            "anomaly_id": "duplicate_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "anomaly_id": "null_dim_teams_team_name",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_dim_teams_team_name"
+            ],
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "anomaly_id": "duplicate_fct_matches_match_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_fct_matches_match_id",
+              "unique_fct_training_dataset_match_id"
+            ],
+            "target": "fct_matches.match_id=1818415"
+          },
+          {
+            "anomaly_id": "null_fct_matches_home_team_id",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_fct_matches_home_team_id",
+              "not_null_fct_training_dataset_home_team_id"
+            ],
+            "target": "fct_matches.match_id=1818416"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_date",
+            "detected": false,
+            "detecting_tests": [
+              "not_null_fct_matches_match_date",
+              "not_null_fct_training_dataset_match_date"
+            ],
+            "target": "fct_matches.match_id=1818417"
+          }
+        ],
+        "detected_count": 3,
+        "total_anomalies": 6,
+        "detection_rate": 0.5
+      }
+    ],
+    "aggregate": {
+      "total_detected": 7,
+      "total_anomalies": 16,
+      "overall_detection_rate": 0.4375,
+      "average_batch_detection_rate": 0.5,
+      "batch_count": 3
+    }
+  },
+  "manual_plus_llm": {
+    "per_batch_results": [
+      {
+        "batch_id": "batch_A_key_integrity",
+        "condition": "manual_plus_llm",
+        "schema_source": "/opt/airflow/dbt_project/models/marts/schema.llm_merged.yml.txt",
+        "returncode": 1,
+        "failed_tests": [
+          "not_null_dim_teams_team_id",
+          "not_null_fct_matches_match_id",
+          "not_null_fct_training_dataset_match_id",
+          "unique_dim_teams_team_id",
+          "unique_fct_matches_match_id",
+          "unique_fct_training_dataset_match_id"
+        ],
+        "log_file": "/opt/airflow/experiments/multibatch_anomaly_results/batch_A_key_integrity__manual_plus_llm_dbt_test.log",
+        "anomaly_manifest": [
+          {
+            "id": "null_dim_teams_team_id",
+            "target": "dim_teams.team_id=133600"
+          },
+          {
+            "id": "duplicate_dim_teams_team_id",
+            "target": "dim_teams.team_id=133599"
+          },
+          {
+            "id": "null_fct_matches_match_id",
+            "target": "fct_matches.match_id=1818396"
+          },
+          {
+            "id": "duplicate_fct_matches_match_id",
+            "target": "fct_matches.match_id=1818395"
+          }
+        ],
+        "detection_results": [
+          {
+            "anomaly_id": "null_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133600"
+          },
+          {
+            "anomaly_id": "duplicate_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133599"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_match_id",
+              "not_null_fct_training_dataset_match_id"
+            ],
+            "target": "fct_matches.match_id=1818396"
+          },
+          {
+            "anomaly_id": "duplicate_fct_matches_match_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_fct_matches_match_id",
+              "unique_fct_training_dataset_match_id"
+            ],
+            "target": "fct_matches.match_id=1818395"
+          }
+        ],
+        "detected_count": 4,
+        "total_anomalies": 4,
+        "detection_rate": 1.0
+      },
+      {
+        "batch_id": "batch_B_semantic_domain",
+        "condition": "manual_plus_llm",
+        "schema_source": "/opt/airflow/dbt_project/models/marts/schema.llm_merged.yml.txt",
+        "returncode": 1,
+        "failed_tests": [
+          "accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress",
+          "not_null_dim_teams_team_name",
+          "not_null_fct_matches_away_team_id",
+          "not_null_fct_matches_home_team_id",
+          "not_null_fct_matches_match_date",
+          "not_null_fct_matches_match_status",
+          "not_null_fct_training_dataset_away_team_id",
+          "not_null_fct_training_dataset_home_team_id",
+          "not_null_fct_training_dataset_match_date"
+        ],
+        "log_file": "/opt/airflow/experiments/multibatch_anomaly_results/batch_B_semantic_domain__manual_plus_llm_dbt_test.log",
+        "anomaly_manifest": [
+          {
+            "id": "null_dim_teams_team_name",
+            "target": "dim_teams.team_id=133602"
+          },
+          {
+            "id": "null_fct_matches_match_status",
+            "target": "fct_matches.match_id=1818405"
+          },
+          {
+            "id": "invalid_fct_matches_match_status",
+            "target": "fct_matches.match_id=1818406"
+          },
+          {
+            "id": "null_fct_matches_home_team_id",
+            "target": "fct_matches.match_id=1818407"
+          },
+          {
+            "id": "null_fct_matches_away_team_id",
+            "target": "fct_matches.match_id=1818408"
+          },
+          {
+            "id": "null_fct_matches_match_date",
+            "target": "fct_matches.match_id=1818409"
+          }
+        ],
+        "detection_results": [
+          {
+            "anomaly_id": "null_dim_teams_team_name",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_dim_teams_team_name"
+            ],
+            "target": "dim_teams.team_id=133602"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_status",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_match_status"
+            ],
+            "target": "fct_matches.match_id=1818405"
+          },
+          {
+            "anomaly_id": "invalid_fct_matches_match_status",
+            "detected": true,
+            "detecting_tests": [
+              "accepted_values_fct_matches_match_status"
+            ],
+            "target": "fct_matches.match_id=1818406"
+          },
+          {
+            "anomaly_id": "null_fct_matches_home_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_home_team_id",
+              "not_null_fct_training_dataset_home_team_id"
+            ],
+            "target": "fct_matches.match_id=1818407"
+          },
+          {
+            "anomaly_id": "null_fct_matches_away_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_away_team_id",
+              "not_null_fct_training_dataset_away_team_id"
+            ],
+            "target": "fct_matches.match_id=1818408"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_date",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_match_date",
+              "not_null_fct_training_dataset_match_date"
+            ],
+            "target": "fct_matches.match_id=1818409"
+          }
+        ],
+        "detected_count": 6,
+        "total_anomalies": 6,
+        "detection_rate": 1.0
+      },
+      {
+        "batch_id": "batch_C_mixed_full_stack",
+        "condition": "manual_plus_llm",
+        "schema_source": "/opt/airflow/dbt_project/models/marts/schema.llm_merged.yml.txt",
+        "returncode": 1,
+        "failed_tests": [
+          "not_null_dim_teams_team_id",
+          "not_null_dim_teams_team_name",
+          "not_null_fct_matches_home_team_id",
+          "not_null_fct_matches_match_date",
+          "not_null_fct_training_dataset_home_team_id",
+          "not_null_fct_training_dataset_match_date",
+          "unique_dim_teams_team_id",
+          "unique_fct_matches_match_id",
+          "unique_fct_training_dataset_match_id"
+        ],
+        "log_file": "/opt/airflow/experiments/multibatch_anomaly_results/batch_C_mixed_full_stack__manual_plus_llm_dbt_test.log",
+        "anomaly_manifest": [
+          {
+            "id": "null_dim_teams_team_id",
+            "target": "dim_teams.team_id=133610"
+          },
+          {
+            "id": "duplicate_dim_teams_team_id",
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "id": "null_dim_teams_team_name",
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "id": "duplicate_fct_matches_match_id",
+            "target": "fct_matches.match_id=1818415"
+          },
+          {
+            "id": "null_fct_matches_home_team_id",
+            "target": "fct_matches.match_id=1818416"
+          },
+          {
+            "id": "null_fct_matches_match_date",
+            "target": "fct_matches.match_id=1818417"
+          }
+        ],
+        "detection_results": [
+          {
+            "anomaly_id": "null_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133610"
+          },
+          {
+            "anomaly_id": "duplicate_dim_teams_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_dim_teams_team_id"
+            ],
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "anomaly_id": "null_dim_teams_team_name",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_dim_teams_team_name"
+            ],
+            "target": "dim_teams.team_id=133604"
+          },
+          {
+            "anomaly_id": "duplicate_fct_matches_match_id",
+            "detected": true,
+            "detecting_tests": [
+              "unique_fct_matches_match_id",
+              "unique_fct_training_dataset_match_id"
+            ],
+            "target": "fct_matches.match_id=1818415"
+          },
+          {
+            "anomaly_id": "null_fct_matches_home_team_id",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_home_team_id",
+              "not_null_fct_training_dataset_home_team_id"
+            ],
+            "target": "fct_matches.match_id=1818416"
+          },
+          {
+            "anomaly_id": "null_fct_matches_match_date",
+            "detected": true,
+            "detecting_tests": [
+              "not_null_fct_matches_match_date",
+              "not_null_fct_training_dataset_match_date"
+            ],
+            "target": "fct_matches.match_id=1818417"
+          }
+        ],
+        "detected_count": 6,
+        "total_anomalies": 6,
+        "detection_rate": 1.0
+      }
+    ],
+    "aggregate": {
+      "total_detected": 16,
+      "total_anomalies": 16,
+      "overall_detection_rate": 1.0,
+      "average_batch_detection_rate": 1.0,
+      "batch_count": 3
+    }
+  },
+  "improvement_summary": {
+    "absolute_additional_detections": 9,
+    "absolute_detection_rate_gain": 0.5625,
+    "relative_detection_count_improvement": 128.57
+  }
+}

@@ -1,0 +1,28 @@
+version: 2
+models:
+  - name: fct_training_dataset
+    columns:
+      - name: match_id
+        tests:
+          - not_null
+          - unique
+      - name: match_date
+        tests:
+          - not_null
+      - name: match_result
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['HOME_WIN', 'AWAY_WIN', 'DRAW']
+      - name: home_team_id
+        tests:
+          - not_null
+      - name: home_team_name
+        tests:
+          - not_null
+      - name: away_team_id
+        tests:
+          - not_null
+      - name: away_team_name
+        tests:
+          - not_null

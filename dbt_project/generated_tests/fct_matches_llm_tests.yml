@@ -1,0 +1,44 @@
+version: 2
+models:
+  - name: fct_matches
+    columns:
+      - name: match_id
+        tests:
+          - not_null
+          - unique
+      - name: league_id
+        tests:
+          - not_null
+      - name: season
+        tests:
+          - not_null
+      - name: match_date
+        tests:
+          - not_null
+      - name: match_status
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Match Finished
+                - Scheduled
+                - Postponed
+                - Cancelled
+      - name: home_team_id
+        tests:
+          - not_null
+      - name: home_team_name
+        tests:
+          - not_null
+      - name: home_team_score
+        tests:
+          - not_null
+      - name: away_team_id
+        tests:
+          - not_null
+      - name: away_team_name
+        tests:
+          - not_null
+      - name: away_team_score
+        tests:
+          - not_null

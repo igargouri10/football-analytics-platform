@@ -1,0 +1,307 @@
+{
+  "source_artifacts": {
+    "generation_summary": "/opt/airflow/dbt_project/generated_tests/generation_summary.json",
+    "baseline_schema": "/opt/airflow/dbt_project/models/marts/schema.manual_backup.yml.txt",
+    "multibatch_summary": "/opt/airflow/experiments/multibatch_anomaly_results/final_summary.json"
+  },
+  "llm_generation_summary": {
+    "models_attempted": 3,
+    "models_successful": 3,
+    "models_failed": 0
+  },
+  "multibatch_detection_context": {
+    "manual_total_detected": 7,
+    "manual_total_anomalies": 16,
+    "manual_overall_detection_rate": 0.4375,
+    "llm_total_detected": 16,
+    "llm_total_anomalies": 16,
+    "llm_overall_detection_rate": 1.0,
+    "relative_detection_count_improvement": 128.57
+  },
+  "test_audit_summary": {
+    "total_generated_test_items": 25,
+    "useful_count": 9,
+    "redundant_count": 4,
+    "executable_but_low_value_count": 12,
+    "invalid_or_non_executable_count": 0,
+    "useful_percentage_of_all_generated": 0.36,
+    "redundant_percentage_of_all_generated": 0.16,
+    "useful_percentage_of_nonredundant_executable": 0.4286
+  },
+  "incremental_detector_prefixes": [
+    "accepted_values_fct_matches_match_status",
+    "not_null_dim_teams_team_name",
+    "not_null_fct_matches_away_team_id",
+    "not_null_fct_matches_home_team_id",
+    "not_null_fct_matches_match_date",
+    "not_null_fct_matches_match_status",
+    "not_null_fct_training_dataset_away_team_id",
+    "not_null_fct_training_dataset_home_team_id",
+    "not_null_fct_training_dataset_match_date"
+  ],
+  "audited_tests": [
+    {
+      "model": "dim_teams",
+      "column": "team_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/dim_teams_llm_tests.yml",
+      "detector_prefix": "not_null_dim_teams_team_id",
+      "classification": "redundant",
+      "rationale": "Exact duplicate of a manual baseline test."
+    },
+    {
+      "model": "dim_teams",
+      "column": "team_id",
+      "test_name": "unique",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/dim_teams_llm_tests.yml",
+      "detector_prefix": "unique_dim_teams_team_id",
+      "classification": "redundant",
+      "rationale": "Exact duplicate of a manual baseline test."
+    },
+    {
+      "model": "dim_teams",
+      "column": "team_name",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/dim_teams_llm_tests.yml",
+      "detector_prefix": "not_null_dim_teams_team_name",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_matches",
+      "column": "match_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_match_id",
+      "classification": "redundant",
+      "rationale": "Exact duplicate of a manual baseline test."
+    },
+    {
+      "model": "fct_matches",
+      "column": "match_id",
+      "test_name": "unique",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "unique_fct_matches_match_id",
+      "classification": "redundant",
+      "rationale": "Exact duplicate of a manual baseline test."
+    },
+    {
+      "model": "fct_matches",
+      "column": "league_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_league_id",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_matches",
+      "column": "season",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_season",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_matches",
+      "column": "match_date",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_match_date",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_matches",
+      "column": "match_status",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_match_status",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_matches",
+      "column": "match_status",
+      "test_name": "accepted_values",
+      "args": {
+        "values": [
+          "Match Finished",
+          "Scheduled",
+          "Postponed",
+          "Cancelled"
+        ]
+      },
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "accepted_values_fct_matches_match_status",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_matches",
+      "column": "home_team_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_home_team_id",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_matches",
+      "column": "home_team_name",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_home_team_name",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_matches",
+      "column": "home_team_score",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_home_team_score",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_matches",
+      "column": "away_team_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_away_team_id",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_matches",
+      "column": "away_team_name",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_away_team_name",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_matches",
+      "column": "away_team_score",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_matches_llm_tests.yml",
+      "detector_prefix": "not_null_fct_matches_away_team_score",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "match_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "not_null_fct_training_dataset_match_id",
+      "classification": "executable_but_low_value",
+      "rationale": "Executed and fired in anomaly experiments, but did not add incremental detection beyond the baseline."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "match_id",
+      "test_name": "unique",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "unique_fct_training_dataset_match_id",
+      "classification": "executable_but_low_value",
+      "rationale": "Executed and fired in anomaly experiments, but did not add incremental detection beyond the baseline."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "match_date",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "not_null_fct_training_dataset_match_date",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "match_result",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "not_null_fct_training_dataset_match_result",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "match_result",
+      "test_name": "accepted_values",
+      "args": {
+        "values": [
+          "HOME_WIN",
+          "AWAY_WIN",
+          "DRAW"
+        ]
+      },
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "accepted_values_fct_training_dataset_match_result",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "home_team_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "not_null_fct_training_dataset_home_team_id",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "home_team_name",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "not_null_fct_training_dataset_home_team_name",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "away_team_id",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "not_null_fct_training_dataset_away_team_id",
+      "classification": "useful",
+      "rationale": "Linked to anomaly types detected by manual+LLM but missed by manual-only."
+    },
+    {
+      "model": "fct_training_dataset",
+      "column": "away_team_name",
+      "test_name": "not_null",
+      "args": {},
+      "source_file": "dbt_project/generated_tests/fct_training_dataset_llm_tests.yml",
+      "detector_prefix": "not_null_fct_training_dataset_away_team_name",
+      "classification": "executable_but_low_value",
+      "rationale": "Executable generated test, but no direct incremental-detection evidence in current anomaly batches."
+    }
+  ]
+}

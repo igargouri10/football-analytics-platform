@@ -1,0 +1,76 @@
+{
+  "artifact_paths": {
+    "runtime": "/opt/airflow/experiments/runtime_logs/latest_pipeline_runtime.json",
+    "generation_summary": "/opt/airflow/dbt_project/generated_tests/generation_summary.json",
+    "migration_summary": "/opt/airflow/experiments/duckdb_to_snowflake_migration_summary.json",
+    "validation_summary": "/opt/airflow/experiments/duckdb_vs_migrated_snowflake_summary.json",
+    "multibatch_summary": "/opt/airflow/experiments/multibatch_anomaly_results/final_summary.json",
+    "usefulness_audit_summary": "/opt/airflow/experiments/usefulness_audit/generated_test_usefulness_summary.json"
+  },
+  "clean_pipeline_summary": {
+    "llm_generation": {
+      "models_attempted": 3,
+      "models_successful": 3,
+      "models_failed": 0
+    },
+    "migration": {
+      "tables_attempted": 3,
+      "tables_loaded_successfully": 3,
+      "row_counts": {
+        "dim_teams": {
+          "duckdb_rows": 20,
+          "snowflake_rows": 20
+        },
+        "fct_matches": {
+          "duckdb_rows": 100,
+          "snowflake_rows": 100
+        },
+        "fct_training_dataset": {
+          "duckdb_rows": 100,
+          "snowflake_rows": 100
+        }
+      }
+    },
+    "validation": {
+      "tables_compared": 3,
+      "match_count": 3,
+      "mismatch_count": 0
+    },
+    "runtime": {
+      "instrumented_stage_count": 8,
+      "total_instrumented_duration_seconds": 106.577,
+      "stage_durations": {
+        "dbt_run_duckdb_full_refresh": 6.997,
+        "generate_llm_tests": 10.707,
+        "dbt_test_duckdb_with_llm": 7.835,
+        "migrate_duckdb_to_snowflake": 22.643,
+        "validate_duckdb_vs_migrated_snowflake": 14.13,
+        "run_multibatch_anomaly_experiment": 44.095,
+        "run_generated_test_usefulness_audit": 0.152,
+        "compile_research_summary": 0.018
+      }
+    }
+  },
+  "anomaly_detection_summary": {
+    "manual_total_detected": 7,
+    "manual_total_anomalies": 16,
+    "manual_overall_detection_rate": 0.4375,
+    "llm_total_detected": 16,
+    "llm_total_anomalies": 16,
+    "llm_overall_detection_rate": 1.0,
+    "absolute_additional_detections": 9,
+    "absolute_detection_rate_gain": 0.5625,
+    "relative_detection_count_improvement": 128.57,
+    "batch_count": 3
+  },
+  "generated_test_usefulness_summary": {
+    "total_generated_test_items": 25,
+    "useful_count": 9,
+    "redundant_count": 4,
+    "executable_but_low_value_count": 12,
+    "invalid_or_non_executable_count": 0,
+    "useful_percentage_of_all_generated": 0.36,
+    "redundant_percentage_of_all_generated": 0.16,
+    "useful_percentage_of_nonredundant_executable": 0.4286
+  }
+}

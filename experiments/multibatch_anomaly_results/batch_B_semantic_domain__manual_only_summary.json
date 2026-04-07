@@ -1,0 +1,90 @@
+{
+  "batch_id": "batch_B_semantic_domain",
+  "condition": "manual_only",
+  "schema_source": "/opt/airflow/dbt_project/models/marts/schema.manual_backup.yml.txt",
+  "returncode": 0,
+  "failed_tests": [],
+  "log_file": "/opt/airflow/experiments/multibatch_anomaly_results/batch_B_semantic_domain__manual_only_dbt_test.log",
+  "anomaly_manifest": [
+    {
+      "id": "null_dim_teams_team_name",
+      "target": "dim_teams.team_id=133602"
+    },
+    {
+      "id": "null_fct_matches_match_status",
+      "target": "fct_matches.match_id=1818405"
+    },
+    {
+      "id": "invalid_fct_matches_match_status",
+      "target": "fct_matches.match_id=1818406"
+    },
+    {
+      "id": "null_fct_matches_home_team_id",
+      "target": "fct_matches.match_id=1818407"
+    },
+    {
+      "id": "null_fct_matches_away_team_id",
+      "target": "fct_matches.match_id=1818408"
+    },
+    {
+      "id": "null_fct_matches_match_date",
+      "target": "fct_matches.match_id=1818409"
+    }
+  ],
+  "detection_results": [
+    {
+      "anomaly_id": "null_dim_teams_team_name",
+      "detected": false,
+      "detecting_tests": [
+        "not_null_dim_teams_team_name"
+      ],
+      "target": "dim_teams.team_id=133602"
+    },
+    {
+      "anomaly_id": "null_fct_matches_match_status",
+      "detected": false,
+      "detecting_tests": [
+        "not_null_fct_matches_match_status"
+      ],
+      "target": "fct_matches.match_id=1818405"
+    },
+    {
+      "anomaly_id": "invalid_fct_matches_match_status",
+      "detected": false,
+      "detecting_tests": [
+        "accepted_values_fct_matches_match_status"
+      ],
+      "target": "fct_matches.match_id=1818406"
+    },
+    {
+      "anomaly_id": "null_fct_matches_home_team_id",
+      "detected": false,
+      "detecting_tests": [
+        "not_null_fct_matches_home_team_id",
+        "not_null_fct_training_dataset_home_team_id"
+      ],
+      "target": "fct_matches.match_id=1818407"
+    },
+    {
+      "anomaly_id": "null_fct_matches_away_team_id",
+      "detected": false,
+      "detecting_tests": [
+        "not_null_fct_matches_away_team_id",
+        "not_null_fct_training_dataset_away_team_id"
+      ],
+      "target": "fct_matches.match_id=1818408"
+    },
+    {
+      "anomaly_id": "null_fct_matches_match_date",
+      "detected": false,
+      "detecting_tests": [
+        "not_null_fct_matches_match_date",
+        "not_null_fct_training_dataset_match_date"
+      ],
+      "target": "fct_matches.match_id=1818409"
+    }
+  ],
+  "detected_count": 0,
+  "total_anomalies": 6,
+  "detection_rate": 0.0
+}

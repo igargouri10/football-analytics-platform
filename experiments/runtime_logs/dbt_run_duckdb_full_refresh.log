@@ -1,0 +1,21 @@
+[0m05:32:05  Running with dbt=1.11.7
+[0m05:32:06  Registered adapter: duckdb=1.8.0
+[0m05:32:07  Found 4 models, 4 data tests, 1 source, 456 macros
+[0m05:32:07  
+[0m05:32:07  Concurrency: 1 threads (target='prod')
+[0m05:32:07  
+[0m05:32:08  1 of 4 START sql table model main.stg_matches .................................. [RUN]
+[0m05:32:08  1 of 4 OK created sql table model main.stg_matches ............................. [[32mOK[0m in 0.88s]
+[0m05:32:09  2 of 4 START sql table model main.dim_teams .................................... [RUN]
+[0m05:32:09  2 of 4 OK created sql table model main.dim_teams ............................... [[32mOK[0m in 0.25s]
+[0m05:32:09  3 of 4 START sql incremental model main.fct_matches ............................ [RUN]
+[0m05:32:09  3 of 4 OK created sql incremental model main.fct_matches ....................... [[32mOK[0m in 0.24s]
+[0m05:32:09  4 of 4 START sql view model main.fct_training_dataset .......................... [RUN]
+[0m05:32:09  4 of 4 OK created sql view model main.fct_training_dataset ..................... [[32mOK[0m in 0.17s]
+[0m05:32:09  
+[0m05:32:09  Finished running 1 incremental model, 2 table models, 1 view model in 0 hours 0 minutes and 2.04 seconds (2.04s).
+[0m05:32:09  
+[0m05:32:09  [32mCompleted successfully[0m
+[0m05:32:09  
+[0m05:32:09  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+

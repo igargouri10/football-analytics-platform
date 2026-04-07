@@ -1,0 +1,21 @@
+[batch_A_key_integrity][manual_only] detected 4/4
+[batch_A_key_integrity][manual_only] failed tests: ['not_null_dim_teams_team_id', 'not_null_fct_matches_match_id', 'unique_dim_teams_team_id', 'unique_fct_matches_match_id']
+[batch_A_key_integrity][manual_only] summary: /opt/airflow/experiments/multibatch_anomaly_results/batch_A_key_integrity__manual_only_summary.json
+[batch_A_key_integrity][manual_plus_llm] detected 4/4
+[batch_A_key_integrity][manual_plus_llm] failed tests: ['not_null_dim_teams_team_id', 'not_null_fct_matches_match_id', 'not_null_fct_training_dataset_match_id', 'unique_dim_teams_team_id', 'unique_fct_matches_match_id', 'unique_fct_training_dataset_match_id']
+[batch_A_key_integrity][manual_plus_llm] summary: /opt/airflow/experiments/multibatch_anomaly_results/batch_A_key_integrity__manual_plus_llm_summary.json
+[batch_B_semantic_domain][manual_only] detected 0/6
+[batch_B_semantic_domain][manual_only] failed tests: []
+[batch_B_semantic_domain][manual_only] summary: /opt/airflow/experiments/multibatch_anomaly_results/batch_B_semantic_domain__manual_only_summary.json
+[batch_B_semantic_domain][manual_plus_llm] detected 6/6
+[batch_B_semantic_domain][manual_plus_llm] failed tests: ['accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress', 'not_null_dim_teams_team_name', 'not_null_fct_matches_away_team_id', 'not_null_fct_matches_home_team_id', 'not_null_fct_matches_match_date', 'not_null_fct_matches_match_status', 'not_null_fct_training_dataset_away_team_id', 'not_null_fct_training_dataset_home_team_id', 'not_null_fct_training_dataset_match_date']
+[batch_B_semantic_domain][manual_plus_llm] summary: /opt/airflow/experiments/multibatch_anomaly_results/batch_B_semantic_domain__manual_plus_llm_summary.json
+[batch_C_mixed_full_stack][manual_only] detected 3/6
+[batch_C_mixed_full_stack][manual_only] failed tests: ['not_null_dim_teams_team_id', 'unique_dim_teams_team_id', 'unique_fct_matches_match_id']
+[batch_C_mixed_full_stack][manual_only] summary: /opt/airflow/experiments/multibatch_anomaly_results/batch_C_mixed_full_stack__manual_only_summary.json
+[batch_C_mixed_full_stack][manual_plus_llm] detected 6/6
+[batch_C_mixed_full_stack][manual_plus_llm] failed tests: ['not_null_dim_teams_team_id', 'not_null_dim_teams_team_name', 'not_null_fct_matches_home_team_id', 'not_null_fct_matches_match_date', 'not_null_fct_training_dataset_home_team_id', 'not_null_fct_training_dataset_match_date', 'unique_dim_teams_team_id', 'unique_fct_matches_match_id', 'unique_fct_training_dataset_match_id']
+[batch_C_mixed_full_stack][manual_plus_llm] summary: /opt/airflow/experiments/multibatch_anomaly_results/batch_C_mixed_full_stack__manual_plus_llm_summary.json
+
+Saved final summary to /opt/airflow/experiments/multibatch_anomaly_results/final_summary.json
+

@@ -1,0 +1,21 @@
+[0m17:22:32  Running with dbt=1.11.7
+[0m17:22:33  Registered adapter: duckdb=1.8.0
+[0m17:22:34  Found 4 models, 4 data tests, 1 source, 456 macros
+[0m17:22:34  
+[0m17:22:34  Concurrency: 1 threads (target='dev')
+[0m17:22:34  
+[0m17:22:34  1 of 4 START test not_null_dim_teams_team_id ................................... [RUN]
+[0m17:22:35  1 of 4 PASS not_null_dim_teams_team_id ......................................... [[32mPASS[0m in 0.13s]
+[0m17:22:35  2 of 4 START test not_null_fct_matches_match_id ................................ [RUN]
+[0m17:22:35  2 of 4 PASS not_null_fct_matches_match_id ...................................... [[32mPASS[0m in 0.18s]
+[0m17:22:35  3 of 4 START test unique_dim_teams_team_id ..................................... [RUN]
+[0m17:22:35  3 of 4 PASS unique_dim_teams_team_id ........................................... [[32mPASS[0m in 0.18s]
+[0m17:22:35  4 of 4 START test unique_fct_matches_match_id .................................. [RUN]
+[0m17:22:35  4 of 4 PASS unique_fct_matches_match_id ........................................ [[32mPASS[0m in 0.26s]
+[0m17:22:35  
+[0m17:22:35  Finished running 4 data tests in 0 hours 0 minutes and 1.10 seconds (1.10s).
+[0m17:22:35  
+[0m17:22:35  [32mCompleted successfully[0m
+[0m17:22:36  
+[0m17:22:36  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+
