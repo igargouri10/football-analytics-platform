@@ -1,118 +1,130 @@
-# End-to-End Football Analytics Platform
+# Football Analytics Platform
 
-![Streamlit Dashboard GIF](httpsor_your_gif_here.gif) <!-- **IMPORTANT**: Create a GIF of your dashboard and replace this line! -->
+A reproducible, research-oriented ELT and data-quality validation platform for football analytics.
 
-This project is a complete, end-to-end data platform that automates the process of ingesting real-time football (soccer) match data, transforming it into a reliable analytical warehouse, and presenting the insights through an interactive web dashboard.
+This repository implements a multi-layer testing workflow for cloud-native ELT pipelines using **Apache Airflow**, **dbt**, **DuckDB**, **Snowflake**, **Amazon S3**, and **OpenAI GPT-4.1-mini**.
 
-### Key Features
+## Repository structure
 
-*   **Automated Ingestion:** An Apache Airflow DAG running in Docker automatically fetches new match data daily from a live API.
-*   **Cloud Data Lake:** Raw JSON data is reliably stored in an AWS S3 bucket, creating a scalable and durable data lake.
-*   **Modern Data Transformation:** dbt is used to transform the raw data into a clean, tested, and de-duplicated star schema (facts and dimensions) powered by DuckDB.
-*   **Data Quality Assurance:** The dbt pipeline includes automated tests to ensure the uniqueness and integrity of key data points like `match_id` and `team_id`.
-*   **Interactive Dashboard:** A Streamlit application provides a user-friendly interface to filter and analyze the data, with metrics and charts that update dynamically.
+```text
+airflow/                     # DAGs and orchestration support
+dbt_project/                 # dbt models, schemas, generated tests, schema versions
+llm_tests/                   # LLM prompts, generation, merge logic
+experiments/                 # anomaly evaluation, usefulness audit, runtime logging, summaries
+dashboard/                   # optional dashboard layer
+docs/                        # setup and reproducibility notes
+```
 
-### Architecture Diagram
+## Main research result
 
-The platform follows a modern ELT (Extract, Load, Transform) architecture.
+In the final comparator-based evaluation:
+- weak manual-only baseline: **7 / 16**
+- manual-expanded comparator: **16 / 16**
+- manual-plus-LLM: **16 / 16**
 
-![Architecture Diagram](httpsor_your_diagram_here.png) <!-- **IMPORTANT**: Create a simple diagram and replace this line! -->
+## Quick start
 
-**Data Flow:**
-`API -> Python Script -> Airflow (Docker) -> AWS S3 (Data Lake) -> dbt -> DuckDB (Data Warehouse) -> Streamlit (Dashboard)`
-
-### Tech Stack
-
-| Category              | Technology                                   |
-| --------------------- | -------------------------------------------- |
-| **Orchestration**     | Apache Airflow, Docker, Docker Compose       |
-| **Data Ingestion**    | Python (`requests`, `boto3`)                 |
-| **Data Lake**         | AWS S3                                       |
-| **Transformation**    | dbt (Data Build Tool)                        |
-| **Data Warehouse**    | DuckDB                                       |
-| **Dashboarding**      | Streamlit, Pandas                            |
-| **Infrastructure**    | AWS IAM (for secure access)                  |
-| **Version Control**   | Git & GitHub                                 |
-
-### Local Setup and Installation
-
-To run this project on your own machine, please follow these steps.
-
-**Prerequisites:**
-*   Python 3.9+
-*   Docker Desktop
-*   An AWS Account with an S3 bucket and an IAM user with programmatic access.
-*   An API Token from [football-data.org](https://www.football-data.org/).
-
-**1. Clone the Repository**
+### Clone
 ```bash
-git clone https://github.com/your-username/football-analytics-platform.git
+git clone https://github.com/igargouri10/football-analytics-platform.git
 cd football-analytics-platform
 ```
 
-**2. Create a Python Virtual Environment**
+### Create virtual environment
+**Windows PowerShell**
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux**
 ```bash
 python -m venv .venv
-.\.venv\Scripts\activate
+source .venv/bin/activate
 ```
 
-**3. Install Dependencies**
+### Install dependencies
 ```bash
-pip install -r requirements.txt 
-# Note: You will need to create a requirements.txt file with:
-# streamlit, pandas, duckdb, dbt-core, dbt-duckdb, requests, boto3, python-dotenv
+pip install -r requirements.txt
 ```
 
-**4. Configure Environment Variables**
-Create a `.env` file in the project root and populate it with your credentials. **This file should be in your `.gitignore` and never committed.**
-```env
-# .env file
-API_FOOTBALL_TOKEN=YOUR_FOOTBALL_API_TOKEN
-AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY
-AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_KEY
-AWS_S3_BUCKET_NAME=your-s3-bucket-name
-AWS_S3_REGION=us-east-1
+### Configure environment
+Copy `.env.example` to `.env` and fill in your values.
+
+### Configure dbt
+Copy `.dbt/profiles.example.yml` into your local dbt profiles directory and customize it.
+
+### Run local workflow
+```bash
+dbt run --project-dir dbt_project --profiles-dir "$HOME/.dbt"
+dbt test --project-dir dbt_project --profiles-dir "$HOME/.dbt"
 ```
 
-**5. Configure dbt Profile**
-Create a `profiles.yml` file at `~/.dbt/` (`C:\Users\YourUsername\.dbt\` on Windows) with the following content:
-```yaml
-football_analytics:
-  target: dev
-  outputs:
-    dev:
-      type: duckdb
-      path: target/dbt.duckdb
-      # Add other S3 settings if needed, but environment variables should work
+### Generate and merge LLM tests
+```bash
+python -m llm_tests.generate_dbt_tests
 ```
 
-### How to Run the Project
+### Run comparator experiment
+```bash
+python -m experiments.run_multibatch_anomaly_experiment
+```
 
-1.  **Start Airflow:** From the project root, start the Docker services.
-    ```bash
-    docker-compose up -d --build
-    ```
-2.  **Initialize Airflow (First Time Only):**
-    ```bash
-    docker-compose exec airflow-webserver airflow db init
-    docker-compose exec airflow-webserver airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com
-    ```
-3.  **Run the Ingestion DAG:** Go to `http://localhost:8080`, log in, and trigger the `football_data_ingestion` DAG to populate your S3 bucket.
+### Run usefulness audit
+```bash
+python -m experiments.run_generated_test_usefulness_audit
+```
 
-4.  **Run the Transformation Pipeline:**
-    *   Open a new terminal and activate the virtual environment (`.\.venv\Scripts\activate`).
-    *   Load your secrets from the `.env` file.
-    *   Navigate to the dbt project: `cd dbt_project`.
-    *   Build and test your data warehouse:
-    ```bash
-    dbt run
-    dbt test
-    ```
+### Run C5 stability
+```bash
+python experiments/c5_stability/run_c5_stability.py
+python experiments/c5_stability/summarize_c5_results.py
+```
 
-5.  **Launch the Dashboard:**
-    *   Navigate back to the project root (`cd ..`).
-    *   Run the Streamlit app:
-    ```bash
-    streamlit run dashboard/app.py
-    ```
-    Your dashboard will open at `http://localhost:8501`.
+## Key artifacts
+
+- `dbt_project/generated_tests/generation_summary.json`
+- `dbt_project/schema_versions/schema.manual_baseline.yml`
+- `dbt_project/schema_versions/schema.manual_expanded.yml`
+- `dbt_project/schema_versions/schema.llm_merged.yml`
+- `experiments/multibatch_anomaly_results/final_summary.json`
+- `experiments/usefulness_audit/generated_test_usefulness_summary.json`
+- `experiments/runtime_logs/latest_pipeline_runtime.json`
+- `experiments/c5_stability/c5_aggregate_summary.json`
+
+## Recommended GitHub contents
+
+Keep in the repo:
+- source code
+- schema versions
+- prompts
+- setup docs
+- small summary artifacts needed for reproducibility
+
+Do **not** commit:
+- `.env`
+- real credentials
+- `.venv/`
+- large local databases
+- Airflow runtime junk
+- `__pycache__/`
+
+## Troubleshooting
+
+### `Could not find profile named ...`
+Check:
+- `dbt_project/dbt_project.yml`
+- your local `profiles.yml`
+- `--profiles-dir`
+
+### `Env var required but not provided`
+Make sure `.env` is loaded into the current shell session.
+
+### DuckDB file lock on Windows
+Use a copied DuckDB file for generation or experiments instead of the live `dbt_project/target/dbt.duckdb`.
+
+### `No module named llm_tests...`
+Run modules with `-m`, for example:
+```bash
+python -m llm_tests.generate_dbt_tests
+```

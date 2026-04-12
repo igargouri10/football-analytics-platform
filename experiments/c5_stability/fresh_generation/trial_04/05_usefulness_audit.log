@@ -1,8 +1,0 @@
-$ C:\Users\ismail.gargouri\Desktop\football_analytics_platform\football-analytics-platform\.venv\Scripts\python.exe -m experiments.run_generated_test_usefulness_audit
-
-STDOUT:
-Wrote summary to C:\Users\ismail.gargouri\Desktop\football_analytics_platform\football-analytics-platform\experiments\usefulness_audit\generated_test_usefulness_summary.json
-Wrote detail to C:\Users\ismail.gargouri\Desktop\football_analytics_platform\football-analytics-platform\experiments\usefulness_audit\generated_test_usefulness_detail.json
-
-
-STDERR:

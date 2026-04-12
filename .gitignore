@@ -1,19 +1,41 @@
-# Python
+# virtual env / caches
 .venv/
 __pycache__/
+*.pyc
 
-# IDE / OS files
-.vscode/
-.DS_Store
-
-# Secrets
+# secrets
 .env
+.env.*
+!.env.example
 
-# Airflow logs
-airflow/logs/
+# local dbt profiles
+.dbt/
+!.dbt/profiles.example.yml
 
-# dbt artifacts to ignore (but not the final database)
-dbt_project/logs/
-dbt_project/dbt_packages/
+# dbt runtime outputs
 dbt_project/target/
-!dbt_project/target/dbt.duckdb
+dbt_packages/
+logs/dbt.log
+
+# local DuckDB files
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp
+
+# Airflow runtime
+airflow/logs/
+airflow/airflow-webserver.pid
+airflow/standalone_admin_password.txt
+
+# temp experiment DBs
+experiments/multibatch_anomaly_results/temp_dbs/
+
+# C5 per-trial artifacts
+experiments/c5_stability/frozen_schema/run_*/
+experiments/c5_stability/fresh_generation/trial_*/
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
