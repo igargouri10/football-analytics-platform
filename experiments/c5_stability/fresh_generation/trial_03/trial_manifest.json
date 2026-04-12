@@ -1,0 +1,51 @@
+{
+  "mode": "fresh_generation",
+  "trial_index": 3,
+  "started_at": "2026-04-12 00:11:26",
+  "commands": [
+    {
+      "name": "generate",
+      "cmd": [
+        "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "llm_tests.generate_dbt_tests"
+      ],
+      "log": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_03\\01_generate.log",
+      "duckdb_path": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_03\\generation_source.duckdb"
+    },
+    {
+      "name": "dbt_test_after_merge",
+      "cmd": [
+        "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\.venv\\Scripts\\dbt.exe",
+        "test",
+        "--project-dir",
+        "dbt_project",
+        "--profiles-dir",
+        "C:\\Users\\ismail.gargouri\\.dbt"
+      ],
+      "log": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_03\\03_clean_dbt_test.log",
+      "duckdb_path": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_03\\generation_source.duckdb"
+    },
+    {
+      "name": "comparator",
+      "cmd": [
+        "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.run_multibatch_anomaly_experiment"
+      ],
+      "log": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_03\\04_comparator.log"
+    },
+    {
+      "name": "usefulness_audit",
+      "cmd": [
+        "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\.venv\\Scripts\\python.exe",
+        "-m",
+        "experiments.run_generated_test_usefulness_audit"
+      ],
+      "log": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_03\\05_usefulness_audit.log"
+    }
+  ],
+  "llm_schema_used": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+  "finished_at": "2026-04-12 00:13:10",
+  "duration_seconds": 103.92
+}

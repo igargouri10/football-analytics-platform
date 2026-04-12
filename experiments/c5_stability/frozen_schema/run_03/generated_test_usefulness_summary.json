@@ -1,0 +1,29 @@
+{
+  "total_generated_items": 23,
+  "useful_count": 8,
+  "redundant_count": 4,
+  "low_value_count": 9,
+  "invalid_count": 2,
+  "useful_detector_families": [
+    "accepted_values_fct_matches_match_status",
+    "not_null_dim_teams_team_name",
+    "not_null_fct_matches_away_team_id",
+    "not_null_fct_matches_home_team_id",
+    "not_null_fct_matches_match_date",
+    "not_null_fct_matches_match_status",
+    "not_null_fct_training_dataset_away_team_id",
+    "not_null_fct_training_dataset_home_team_id",
+    "not_null_fct_training_dataset_match_date"
+  ],
+  "generated_source_files": [
+    "dim_teams_llm_tests.yml",
+    "fct_matches_llm_tests.yml",
+    "fct_training_dataset_llm_tests.yml"
+  ],
+  "classification_counts": {
+    "useful": 8,
+    "redundant": 4,
+    "low_value": 9,
+    "invalid": 2
+  }
+}

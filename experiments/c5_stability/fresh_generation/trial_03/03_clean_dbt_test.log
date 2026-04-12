@@ -1,0 +1,64 @@
+$ C:\Users\ismail.gargouri\Desktop\football_analytics_platform\football-analytics-platform\.venv\Scripts\dbt.exe test --project-dir dbt_project --profiles-dir C:\Users\ismail.gargouri\.dbt
+
+STDOUT:
+05:11:49  Running with dbt=1.11.7
+05:11:50  Registered adapter: duckdb=1.10.1
+05:11:50  Unable to do partial parsing because config vars, config profile, or config target have changed
+05:11:50  Unable to do partial parsing because profile has changed
+05:11:51  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on 'fct_matches' in
+package 'football_analytics' (models\marts\schema.yml). Arguments to generic
+tests should be nested under the `arguments` property.
+05:11:52  Found 4 models, 16 data tests, 1 source, 475 macros
+05:11:52  
+05:11:52  Concurrency: 4 threads (target='dev')
+05:11:52  
+05:11:52  1 of 16 START test accepted_values_fct_matches_match_status__Match_Finished__Postponed__Cancelled__Scheduled  [RUN]
+05:11:52  2 of 16 START test not_null_dim_teams_team_id .................................. [RUN]
+05:11:52  3 of 16 START test not_null_dim_teams_team_name ................................ [RUN]
+05:11:52  4 of 16 START test not_null_fct_matches_away_team_id ........................... [RUN]
+05:11:52  1 of 16 PASS accepted_values_fct_matches_match_status__Match_Finished__Postponed__Cancelled__Scheduled  [PASS in 0.11s]
+05:11:52  2 of 16 PASS not_null_dim_teams_team_id ........................................ [PASS in 0.12s]
+05:11:52  3 of 16 PASS not_null_dim_teams_team_name ...................................... [PASS in 0.12s]
+05:11:52  4 of 16 PASS not_null_fct_matches_away_team_id ................................. [PASS in 0.12s]
+05:11:52  5 of 16 START test not_null_fct_matches_away_team_name ......................... [RUN]
+05:11:52  6 of 16 START test not_null_fct_matches_away_team_score ........................ [RUN]
+05:11:52  7 of 16 START test not_null_fct_matches_home_team_id ........................... [RUN]
+05:11:52  8 of 16 START test not_null_fct_matches_home_team_name ......................... [RUN]
+05:11:52  5 of 16 PASS not_null_fct_matches_away_team_name ............................... [PASS in 0.08s]
+05:11:52  6 of 16 PASS not_null_fct_matches_away_team_score .............................. [PASS in 0.08s]
+05:11:52  7 of 16 PASS not_null_fct_matches_home_team_id ................................. [PASS in 0.08s]
+05:11:52  8 of 16 PASS not_null_fct_matches_home_team_name ............................... [PASS in 0.08s]
+05:11:52  9 of 16 START test not_null_fct_matches_home_team_score ........................ [RUN]
+05:11:52  10 of 16 START test not_null_fct_matches_league_id ............................. [RUN]
+05:11:52  11 of 16 START test not_null_fct_matches_match_date ............................ [RUN]
+05:11:52  12 of 16 START test not_null_fct_matches_match_id .............................. [RUN]
+05:11:52  9 of 16 PASS not_null_fct_matches_home_team_score .............................. [PASS in 0.08s]
+05:11:52  10 of 16 PASS not_null_fct_matches_league_id ................................... [PASS in 0.08s]
+05:11:52  11 of 16 PASS not_null_fct_matches_match_date .................................. [PASS in 0.08s]
+05:11:52  12 of 16 PASS not_null_fct_matches_match_id .................................... [PASS in 0.08s]
+05:11:52  13 of 16 START test not_null_fct_matches_match_status .......................... [RUN]
+05:11:52  14 of 16 START test not_null_fct_matches_season ................................ [RUN]
+05:11:52  15 of 16 START test unique_dim_teams_team_id ................................... [RUN]
+05:11:52  16 of 16 START test unique_fct_matches_match_id ................................ [RUN]
+05:11:52  13 of 16 PASS not_null_fct_matches_match_status ................................ [PASS in 0.08s]
+05:11:52  14 of 16 PASS not_null_fct_matches_season ...................................... [PASS in 0.09s]
+05:11:52  15 of 16 PASS unique_dim_teams_team_id ......................................... [PASS in 0.09s]
+05:11:52  16 of 16 PASS unique_fct_matches_match_id ...................................... [PASS in 0.09s]
+05:11:52  
+05:11:52  Finished running 16 data tests in 0 hours 0 minutes and 0.72 seconds (0.72s).
+05:11:52  
+05:11:52  Completed successfully
+05:11:52  
+05:11:52  Done. PASS=16 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=16
+05:11:52  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+
+
+STDERR:

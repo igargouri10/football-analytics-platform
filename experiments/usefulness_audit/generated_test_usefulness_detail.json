@@ -1,0 +1,170 @@
+[
+  {
+    "source_file": "dim_teams_llm_tests.yml",
+    "model": "dim_teams",
+    "column": "team_id",
+    "test_name": "not_null",
+    "generic_detector": "not_null_dim_teams_team_id",
+    "classification": "redundant",
+    "reason": "Generated item duplicates a manual baseline test.",
+    "args": {}
+  },
+  {
+    "source_file": "dim_teams_llm_tests.yml",
+    "model": "dim_teams",
+    "column": "team_id",
+    "test_name": "unique",
+    "generic_detector": "unique_dim_teams_team_id",
+    "classification": "redundant",
+    "reason": "Generated item duplicates a manual baseline test.",
+    "args": {}
+  },
+  {
+    "source_file": "dim_teams_llm_tests.yml",
+    "model": "dim_teams",
+    "column": "team_name",
+    "test_name": "not_null",
+    "generic_detector": "not_null_dim_teams_team_name",
+    "classification": "useful",
+    "reason": "Generated item maps to a detector family that added coverage beyond the weak baseline.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "match_id",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_match_id",
+    "classification": "redundant",
+    "reason": "Generated item duplicates a manual baseline test.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "match_id",
+    "test_name": "unique",
+    "generic_detector": "unique_fct_matches_match_id",
+    "classification": "redundant",
+    "reason": "Generated item duplicates a manual baseline test.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "league_id",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_league_id",
+    "classification": "low_value",
+    "reason": "Generated item is executable but did not demonstrate incremental detection value in the implemented anomaly batches.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "season",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_season",
+    "classification": "low_value",
+    "reason": "Generated item is executable but did not demonstrate incremental detection value in the implemented anomaly batches.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "match_date",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_match_date",
+    "classification": "useful",
+    "reason": "Generated item maps to a detector family that added coverage beyond the weak baseline.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "match_status",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_match_status",
+    "classification": "useful",
+    "reason": "Generated item maps to a detector family that added coverage beyond the weak baseline.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "match_status",
+    "test_name": "accepted_values",
+    "generic_detector": "accepted_values_fct_matches_match_status",
+    "classification": "useful",
+    "reason": "Generated item maps to a detector family that added coverage beyond the weak baseline.",
+    "args": {
+      "values": [
+        "Match Finished",
+        "Postponed",
+        "Cancelled",
+        "Scheduled",
+        "In Progress"
+      ]
+    }
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "home_team_id",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_home_team_id",
+    "classification": "useful",
+    "reason": "Generated item maps to a detector family that added coverage beyond the weak baseline.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "home_team_name",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_home_team_name",
+    "classification": "low_value",
+    "reason": "Generated item is executable but did not demonstrate incremental detection value in the implemented anomaly batches.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "home_team_score",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_home_team_score",
+    "classification": "low_value",
+    "reason": "Generated item is executable but did not demonstrate incremental detection value in the implemented anomaly batches.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "away_team_id",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_away_team_id",
+    "classification": "useful",
+    "reason": "Generated item maps to a detector family that added coverage beyond the weak baseline.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "away_team_name",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_away_team_name",
+    "classification": "low_value",
+    "reason": "Generated item is executable but did not demonstrate incremental detection value in the implemented anomaly batches.",
+    "args": {}
+  },
+  {
+    "source_file": "fct_matches_llm_tests.yml",
+    "model": "fct_matches",
+    "column": "away_team_score",
+    "test_name": "not_null",
+    "generic_detector": "not_null_fct_matches_away_team_score",
+    "classification": "low_value",
+    "reason": "Generated item is executable but did not demonstrate incremental detection value in the implemented anomaly batches.",
+    "args": {}
+  }
+]

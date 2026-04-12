@@ -1,0 +1,6 @@
+name,mode,duration_seconds,manual_only_detected,manual_expanded_detected,manual_plus_llm_detected,llm_matches_manual_expanded,llm_beats_weak_baseline,generation_total,useful_count,redundant_count,low_value_count,invalid_count
+run_01,frozen_schema,78.273,7,16,16,True,True,,8,4,9,2
+run_02,frozen_schema,81.727,7,16,16,True,True,,8,4,9,2
+run_03,frozen_schema,82.59,7,16,16,True,True,,8,4,9,2
+run_04,frozen_schema,81.906,7,16,16,True,True,,8,4,9,2
+run_05,frozen_schema,84.609,7,16,16,True,True,,8,4,9,2

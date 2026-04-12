@@ -1,0 +1,6 @@
+name,mode,duration_seconds,manual_only_detected,manual_expanded_detected,manual_plus_llm_detected,llm_matches_manual_expanded,llm_beats_weak_baseline,generation_total,useful_count,redundant_count,low_value_count,invalid_count
+trial_01,fresh_generation,1653.963,7,16,16,True,True,16,6,4,6,0
+trial_02,fresh_generation,92.593,7,16,16,True,True,16,6,4,6,0
+trial_03,fresh_generation,103.92,7,16,16,True,True,16,6,4,6,0
+trial_04,fresh_generation,93.726,7,16,16,True,True,16,6,4,6,0
+trial_05,fresh_generation,91.216,7,16,16,True,True,16,6,4,6,0

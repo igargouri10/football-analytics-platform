@@ -1,0 +1,123 @@
+version: 2
+
+models:
+  - name: fct_matches
+    description: Fact table containing all finished football matches.
+    columns:
+      - name: match_id
+        description: The unique identifier for a match.
+        tests:
+          - unique
+          - not_null
+
+      - name: league_id
+        tests:
+          - not_null
+
+      - name: season
+        tests:
+          - not_null
+
+      - name: match_date
+        tests:
+          - not_null
+
+      - name: match_status
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Match Finished
+                  - Match Postponed
+                  - Match Cancelled
+                  - Match Scheduled
+                  - In Progress
+
+      - name: home_team_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_teams')
+                field: team_id
+
+      - name: home_team_name
+        tests:
+          - not_null
+
+      - name: home_team_score
+        tests:
+          - not_null
+
+      - name: away_team_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_teams')
+                field: team_id
+
+      - name: away_team_name
+        tests:
+          - not_null
+
+      - name: away_team_score
+        tests:
+          - not_null
+
+  - name: dim_teams
+    description: Dimension table for football teams.
+    columns:
+      - name: team_id
+        description: The unique identifier for a team.
+        tests:
+          - unique
+          - not_null
+
+      - name: team_name
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_training_dataset
+    description: Training dataset derived from curated football match data.
+    columns:
+      - name: match_id
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('fct_matches')
+                field: match_id
+
+      - name: match_date
+        tests:
+          - not_null
+
+      - name: match_result
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - HOME_WIN
+                  - AWAY_WIN
+                  - DRAW
+
+      - name: home_team_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_teams')
+                field: team_id
+
+      - name: away_team_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_teams')
+                field: team_id

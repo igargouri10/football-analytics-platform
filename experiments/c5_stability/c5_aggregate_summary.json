@@ -1,0 +1,120 @@
+{
+  "frozen_schema": {
+    "trial_count": 5,
+    "llm_matches_manual_expanded_count": 5,
+    "llm_beats_weak_baseline_count": 5,
+    "manual_only_detected_stats": {
+      "mean": 7,
+      "std": 0.0,
+      "min": 7,
+      "max": 7
+    },
+    "manual_expanded_detected_stats": {
+      "mean": 16,
+      "std": 0.0,
+      "min": 16,
+      "max": 16
+    },
+    "manual_plus_llm_detected_stats": {
+      "mean": 16,
+      "std": 0.0,
+      "min": 16,
+      "max": 16
+    },
+    "duration_seconds_stats": {
+      "mean": 81.821,
+      "std": 2.0479,
+      "min": 78.273,
+      "max": 84.609
+    },
+    "generation_total_stats": {
+      "mean": null,
+      "std": null,
+      "min": null,
+      "max": null
+    },
+    "useful_count_stats": {
+      "mean": 8,
+      "std": 0.0,
+      "min": 8,
+      "max": 8
+    },
+    "redundant_count_stats": {
+      "mean": 4,
+      "std": 0.0,
+      "min": 4,
+      "max": 4
+    },
+    "low_value_count_stats": {
+      "mean": 9,
+      "std": 0.0,
+      "min": 9,
+      "max": 9
+    },
+    "invalid_count_stats": {
+      "mean": 2,
+      "std": 0.0,
+      "min": 2,
+      "max": 2
+    }
+  },
+  "fresh_generation": {
+    "trial_count": 5,
+    "llm_matches_manual_expanded_count": 5,
+    "llm_beats_weak_baseline_count": 5,
+    "manual_only_detected_stats": {
+      "mean": 7,
+      "std": 0.0,
+      "min": 7,
+      "max": 7
+    },
+    "manual_expanded_detected_stats": {
+      "mean": 16,
+      "std": 0.0,
+      "min": 16,
+      "max": 16
+    },
+    "manual_plus_llm_detected_stats": {
+      "mean": 16,
+      "std": 0.0,
+      "min": 16,
+      "max": 16
+    },
+    "duration_seconds_stats": {
+      "mean": 407.0836,
+      "std": 623.4559,
+      "min": 91.216,
+      "max": 1653.963
+    },
+    "generation_total_stats": {
+      "mean": 16,
+      "std": 0.0,
+      "min": 16,
+      "max": 16
+    },
+    "useful_count_stats": {
+      "mean": 6,
+      "std": 0.0,
+      "min": 6,
+      "max": 6
+    },
+    "redundant_count_stats": {
+      "mean": 4,
+      "std": 0.0,
+      "min": 4,
+      "max": 4
+    },
+    "low_value_count_stats": {
+      "mean": 6,
+      "std": 0.0,
+      "min": 6,
+      "max": 6
+    },
+    "invalid_count_stats": {
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    }
+  }
+}
