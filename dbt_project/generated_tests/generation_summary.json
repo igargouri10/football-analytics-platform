@@ -4,18 +4,18 @@
     "fct_matches",
     "fct_training_dataset"
   ],
-  "duckdb_path_used": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_05\\generation_source.duckdb",
+  "duckdb_path_used": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\experiments\\c5_stability\\fresh_generation\\trial_05\\generation_source.duckdb",
   "total_models": 3,
   "success_count": 2,
   "failed_count": 1,
   "total_generated_items": 16,
-  "merged_schema_file": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+  "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
   "merged_schema_test_count": 16,
   "results": [
     {
       "model": "dim_teams",
       "status": "success",
-      "output_file": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\generated_tests\\dim_teams_llm_tests.yml",
+      "output_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\dim_teams_llm_tests.yml",
       "columns": [
         {
           "name": "team_id",
@@ -45,7 +45,7 @@
     {
       "model": "fct_matches",
       "status": "success",
-      "output_file": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\generated_tests\\fct_matches_llm_tests.yml",
+      "output_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\fct_matches_llm_tests.yml",
       "columns": [
         {
           "name": "match_id",

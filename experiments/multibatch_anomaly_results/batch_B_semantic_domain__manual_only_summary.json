@@ -1,11 +1,11 @@
 {
   "batch_id": "batch_B_semantic_domain",
   "condition": "manual_only",
-  "schema_source": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\schema_versions\\schema.manual_baseline.yml",
-  "db_path_used": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\multibatch_anomaly_results\\temp_dbs\\batch_B_semantic_domain__manual_only.duckdb",
+  "schema_source": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.manual_baseline.yml",
+  "db_path_used": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\experiments\\multibatch_anomaly_results\\temp_dbs\\batch_B_semantic_domain__manual_only.duckdb",
   "returncode": 0,
   "failed_tests": [],
-  "log_file": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\experiments\\multibatch_anomaly_results\\batch_B_semantic_domain__manual_only_dbt_test.log",
+  "log_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\experiments\\multibatch_anomaly_results\\batch_B_semantic_domain__manual_only_dbt_test.log",
   "mutation_verification": {
     "null_dim_teams_team_name": true,
     "null_fct_matches_match_status": true,

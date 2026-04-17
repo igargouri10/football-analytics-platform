@@ -100,10 +100,9 @@
     "args": {
       "values": [
         "Match Finished",
-        "Postponed",
-        "Cancelled",
         "Scheduled",
-        "In Progress"
+        "Postponed",
+        "Cancelled"
       ]
     }
   },

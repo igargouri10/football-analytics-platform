@@ -14,6 +14,7 @@ __pycache__/
 
 # dbt runtime outputs
 dbt_project/target/
+dbt_project/logs/
 dbt_packages/
 logs/dbt.log
 
@@ -34,8 +35,23 @@ experiments/multibatch_anomaly_results/temp_dbs/
 experiments/c5_stability/frozen_schema/run_*/
 experiments/c5_stability/fresh_generation/trial_*/
 
+# Python virtual environments
+venv/
+.venv/
+
 # editor / OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+
+# paper source and compiled output (managed in Overleaf)
+main.tex
+CSCI_565_Research_Paper.pdf
+
+# generated figure artifacts (HTML preview and stale double-extension PNG)
+figures_preview.html
+fig2_llm_test_quality_updated.png.png
+
+# Claude Code internal
+.claude/

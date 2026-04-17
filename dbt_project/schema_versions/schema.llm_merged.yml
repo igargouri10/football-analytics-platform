@@ -23,10 +23,9 @@ models:
     - accepted_values:
         values:
         - Match Finished
+        - Scheduled
         - Postponed
         - Cancelled
-        - Scheduled
-        - In Progress
   - name: home_team_id
     tests:
     - not_null

@@ -1,161 +1,161 @@
-05:15:11  Running with dbt=1.11.7
-05:15:11  Registered adapter: duckdb=1.10.1
-05:15:13  Found 4 models, 29 data tests, 1 source, 475 macros
-05:15:13  
-05:15:13  Concurrency: 4 threads (target='dev')
-05:15:13  
-05:15:14  1 of 29 START test accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress  [RUN]
-05:15:14  2 of 29 START test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [RUN]
-05:15:14  3 of 29 START test not_null_dim_teams_team_id .................................. [RUN]
-05:15:14  4 of 29 START test not_null_dim_teams_team_name ................................ [RUN]
-05:15:14  1 of 29 PASS accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress  [PASS in 0.14s]
-05:15:14  3 of 29 FAIL 1 not_null_dim_teams_team_id ...................................... [FAIL 1 in 0.14s]
-05:15:14  4 of 29 PASS not_null_dim_teams_team_name ...................................... [PASS in 0.15s]
-05:15:14  5 of 29 START test not_null_fct_matches_away_team_id ........................... [RUN]
-05:15:14  6 of 29 START test not_null_fct_matches_away_team_name ......................... [RUN]
-05:15:14  7 of 29 START test not_null_fct_matches_away_team_score ........................ [RUN]
-05:15:14  2 of 29 ERROR accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [ERROR in 0.20s]
-05:15:14  8 of 29 START test not_null_fct_matches_home_team_id ........................... [RUN]
-05:15:14  5 of 29 PASS not_null_fct_matches_away_team_id ................................. [PASS in 0.11s]
-05:15:14  6 of 29 PASS not_null_fct_matches_away_team_name ............................... [PASS in 0.12s]
-05:15:14  7 of 29 PASS not_null_fct_matches_away_team_score .............................. [PASS in 0.12s]
-05:15:14  9 of 29 START test not_null_fct_matches_home_team_name ......................... [RUN]
-05:15:14  10 of 29 START test not_null_fct_matches_home_team_score ....................... [RUN]
-05:15:14  11 of 29 START test not_null_fct_matches_league_id ............................. [RUN]
-05:15:14  8 of 29 PASS not_null_fct_matches_home_team_id ................................. [PASS in 0.10s]
-05:15:14  12 of 29 START test not_null_fct_matches_match_date ............................ [RUN]
-05:15:14  9 of 29 PASS not_null_fct_matches_home_team_name ............................... [PASS in 0.11s]
-05:15:14  10 of 29 PASS not_null_fct_matches_home_team_score ............................. [PASS in 0.11s]
-05:15:14  11 of 29 PASS not_null_fct_matches_league_id ................................... [PASS in 0.11s]
-05:15:14  13 of 29 START test not_null_fct_matches_match_id .............................. [RUN]
-05:15:14  14 of 29 START test not_null_fct_matches_match_status .......................... [RUN]
-05:15:14  15 of 29 START test not_null_fct_matches_season ................................ [RUN]
-05:15:14  12 of 29 PASS not_null_fct_matches_match_date .................................. [PASS in 0.11s]
-05:15:14  16 of 29 START test not_null_fct_training_dataset_away_team_id ................. [RUN]
-05:15:14  13 of 29 FAIL 1 not_null_fct_matches_match_id .................................. [FAIL 1 in 0.11s]
-05:15:14  14 of 29 PASS not_null_fct_matches_match_status ................................ [PASS in 0.11s]
-05:15:14  15 of 29 PASS not_null_fct_matches_season ...................................... [PASS in 0.10s]
-05:15:14  17 of 29 START test not_null_fct_training_dataset_home_team_id ................. [RUN]
-05:15:14  18 of 29 START test not_null_fct_training_dataset_match_date ................... [RUN]
-05:15:14  19 of 29 START test not_null_fct_training_dataset_match_id ..................... [RUN]
-05:15:14  16 of 29 ERROR not_null_fct_training_dataset_away_team_id ...................... [ERROR in 0.13s]
-05:15:14  20 of 29 START test not_null_fct_training_dataset_match_result ................. [RUN]
-05:15:14  17 of 29 ERROR not_null_fct_training_dataset_home_team_id ...................... [ERROR in 0.12s]
-05:15:14  18 of 29 ERROR not_null_fct_training_dataset_match_date ........................ [ERROR in 0.13s]
-05:15:14  19 of 29 ERROR not_null_fct_training_dataset_match_id .......................... [ERROR in 0.13s]
-05:15:14  21 of 29 START test relationships_fct_matches_away_team_id__team_id__ref_dim_teams_  [RUN]
-05:15:14  22 of 29 START test relationships_fct_matches_home_team_id__team_id__ref_dim_teams_  [RUN]
-05:15:14  23 of 29 START test relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_  [RUN]
-05:15:14  20 of 29 ERROR not_null_fct_training_dataset_match_result ...................... [ERROR in 0.14s]
-05:15:14  24 of 29 START test relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_  [RUN]
-05:15:14  21 of 29 FAIL 6 relationships_fct_matches_away_team_id__team_id__ref_dim_teams_  [FAIL 6 in 0.12s]
-05:15:14  22 of 29 FAIL 4 relationships_fct_matches_home_team_id__team_id__ref_dim_teams_  [FAIL 4 in 0.12s]
-05:15:15  25 of 29 START test relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_  [RUN]
-05:15:15  26 of 29 START test unique_dim_teams_team_id ................................... [RUN]
-05:15:15  23 of 29 ERROR relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_  [ERROR in 0.15s]
-05:15:15  27 of 29 START test unique_dim_teams_team_name ................................. [RUN]
-05:15:15  24 of 29 ERROR relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_  [ERROR in 0.13s]
-05:15:15  28 of 29 START test unique_fct_matches_match_id ................................ [RUN]
-05:15:15  26 of 29 FAIL 1 unique_dim_teams_team_id ....................................... [FAIL 1 in 0.11s]
-05:15:15  29 of 29 START test unique_fct_training_dataset_match_id ....................... [RUN]
-05:15:15  25 of 29 ERROR relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_  [ERROR in 0.13s]
-05:15:15  27 of 29 PASS unique_dim_teams_team_name ....................................... [PASS in 0.10s]
-05:15:15  28 of 29 FAIL 1 unique_fct_matches_match_id .................................... [FAIL 1 in 0.08s]
-05:15:15  29 of 29 ERROR unique_fct_training_dataset_match_id ............................ [ERROR in 0.06s]
-05:15:15  
-05:15:15  Finished running 29 data tests in 0 hours 0 minutes and 1.44 seconds (1.44s).
-05:15:15  
-05:15:15  Completed with 16 errors, 0 partial successes, and 0 warnings:
-05:15:15  
-05:15:15  Failure in test not_null_dim_teams_team_id (models\marts\schema.yml)
-05:15:15    Got 1 result, configured to fail if != 0
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_dim_teams_team_id.sql
-05:15:15  
-05:15:15  Failure in test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW (models\marts\schema.yml)
-05:15:15    Runtime Error in test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW (models\marts\schema.yml)
+00:09:20  Running with dbt=1.11.8
+00:09:20  Registered adapter: duckdb=1.10.1
+00:09:22  Found 4 models, 29 data tests, 1 source, 475 macros
+00:09:22  
+00:09:22  Concurrency: 4 threads (target='dev')
+00:09:22  
+00:09:22  1 of 29 START test accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress  [RUN]
+00:09:22  2 of 29 START test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [RUN]
+00:09:22  3 of 29 START test not_null_dim_teams_team_id .................................. [RUN]
+00:09:22  4 of 29 START test not_null_dim_teams_team_name ................................ [RUN]
+00:09:22  1 of 29 PASS accepted_values_fct_matches_match_status__Match_Finished__Match_Postponed__Match_Cancelled__Match_Scheduled__In_Progress  [PASS in 0.11s]
+00:09:22  3 of 29 FAIL 1 not_null_dim_teams_team_id ...................................... [FAIL 1 in 0.10s]
+00:09:22  4 of 29 PASS not_null_dim_teams_team_name ...................................... [PASS in 0.11s]
+00:09:22  5 of 29 START test not_null_fct_matches_away_team_id ........................... [RUN]
+00:09:22  6 of 29 START test not_null_fct_matches_away_team_name ......................... [RUN]
+00:09:22  7 of 29 START test not_null_fct_matches_away_team_score ........................ [RUN]
+00:09:22  2 of 29 ERROR accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW  [ERROR in 0.14s]
+00:09:22  8 of 29 START test not_null_fct_matches_home_team_id ........................... [RUN]
+00:09:23  5 of 29 PASS not_null_fct_matches_away_team_id ................................. [PASS in 0.07s]
+00:09:23  6 of 29 PASS not_null_fct_matches_away_team_name ............................... [PASS in 0.08s]
+00:09:23  7 of 29 PASS not_null_fct_matches_away_team_score .............................. [PASS in 0.08s]
+00:09:23  9 of 29 START test not_null_fct_matches_home_team_name ......................... [RUN]
+00:09:23  10 of 29 START test not_null_fct_matches_home_team_score ....................... [RUN]
+00:09:23  11 of 29 START test not_null_fct_matches_league_id ............................. [RUN]
+00:09:23  8 of 29 PASS not_null_fct_matches_home_team_id ................................. [PASS in 0.06s]
+00:09:23  12 of 29 START test not_null_fct_matches_match_date ............................ [RUN]
+00:09:23  9 of 29 PASS not_null_fct_matches_home_team_name ............................... [PASS in 0.08s]
+00:09:23  10 of 29 PASS not_null_fct_matches_home_team_score ............................. [PASS in 0.08s]
+00:09:23  11 of 29 PASS not_null_fct_matches_league_id ................................... [PASS in 0.09s]
+00:09:23  13 of 29 START test not_null_fct_matches_match_id .............................. [RUN]
+00:09:23  14 of 29 START test not_null_fct_matches_match_status .......................... [RUN]
+00:09:23  12 of 29 PASS not_null_fct_matches_match_date .................................. [PASS in 0.05s]
+00:09:23  15 of 29 START test not_null_fct_matches_season ................................ [RUN]
+00:09:23  16 of 29 START test not_null_fct_training_dataset_away_team_id ................. [RUN]
+00:09:23  13 of 29 FAIL 1 not_null_fct_matches_match_id .................................. [FAIL 1 in 0.07s]
+00:09:23  14 of 29 PASS not_null_fct_matches_match_status ................................ [PASS in 0.08s]
+00:09:23  15 of 29 PASS not_null_fct_matches_season ...................................... [PASS in 0.08s]
+00:09:23  17 of 29 START test not_null_fct_training_dataset_home_team_id ................. [RUN]
+00:09:23  18 of 29 START test not_null_fct_training_dataset_match_date ................... [RUN]
+00:09:23  19 of 29 START test not_null_fct_training_dataset_match_id ..................... [RUN]
+00:09:23  16 of 29 ERROR not_null_fct_training_dataset_away_team_id ...................... [ERROR in 0.09s]
+00:09:23  20 of 29 START test not_null_fct_training_dataset_match_result ................. [RUN]
+00:09:23  17 of 29 ERROR not_null_fct_training_dataset_home_team_id ...................... [ERROR in 0.09s]
+00:09:23  18 of 29 ERROR not_null_fct_training_dataset_match_date ........................ [ERROR in 0.10s]
+00:09:23  19 of 29 ERROR not_null_fct_training_dataset_match_id .......................... [ERROR in 0.10s]
+00:09:23  21 of 29 START test relationships_fct_matches_away_team_id__team_id__ref_dim_teams_  [RUN]
+00:09:23  22 of 29 START test relationships_fct_matches_home_team_id__team_id__ref_dim_teams_  [RUN]
+00:09:23  23 of 29 START test relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_  [RUN]
+00:09:23  20 of 29 ERROR not_null_fct_training_dataset_match_result ...................... [ERROR in 0.08s]
+00:09:23  24 of 29 START test relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_  [RUN]
+00:09:23  21 of 29 FAIL 6 relationships_fct_matches_away_team_id__team_id__ref_dim_teams_  [FAIL 6 in 0.09s]
+00:09:23  22 of 29 FAIL 4 relationships_fct_matches_home_team_id__team_id__ref_dim_teams_  [FAIL 4 in 0.09s]
+00:09:23  25 of 29 START test relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_  [RUN]
+00:09:23  26 of 29 START test unique_dim_teams_team_id ................................... [RUN]
+00:09:23  23 of 29 ERROR relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_  [ERROR in 0.10s]
+00:09:23  24 of 29 ERROR relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_  [ERROR in 0.17s]
+00:09:23  27 of 29 START test unique_dim_teams_team_name ................................. [RUN]
+00:09:23  28 of 29 START test unique_fct_matches_match_id ................................ [RUN]
+00:09:23  26 of 29 FAIL 1 unique_dim_teams_team_id ....................................... [FAIL 1 in 0.16s]
+00:09:23  25 of 29 ERROR relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_  [ERROR in 0.18s]
+00:09:23  29 of 29 START test unique_fct_training_dataset_match_id ....................... [RUN]
+00:09:23  27 of 29 PASS unique_dim_teams_team_name ....................................... [PASS in 0.07s]
+00:09:23  28 of 29 FAIL 1 unique_fct_matches_match_id .................................... [FAIL 1 in 0.07s]
+00:09:23  29 of 29 ERROR unique_fct_training_dataset_match_id ............................ [ERROR in 0.03s]
+00:09:23  
+00:09:23  Finished running 29 data tests in 0 hours 0 minutes and 1.01 seconds (1.01s).
+00:09:23  
+00:09:23  Completed with 16 errors, 0 partial successes, and 0 warnings:
+00:09:23  
+00:09:23  Failure in test not_null_dim_teams_team_id (models\marts\schema.yml)
+00:09:23    Got 1 result, configured to fail if != 0
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_dim_teams_team_id.sql
+00:09:23  
+00:09:23  Failure in test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW (models\marts\schema.yml)
+00:09:23    Runtime Error in test accepted_values_fct_training_dataset_match_result__HOME_WIN__AWAY_WIN__DRAW (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\accepted_values_fct_training_d_348ba967cd9ea244ffed0d42fa55067e.sql
-05:15:15  
-05:15:15  Failure in test not_null_fct_matches_match_id (models\marts\schema.yml)
-05:15:15    Got 1 result, configured to fail if != 0
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_match_id.sql
-05:15:15  
-05:15:15  Failure in test not_null_fct_training_dataset_away_team_id (models\marts\schema.yml)
-05:15:15    Runtime Error in test not_null_fct_training_dataset_away_team_id (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\accepted_values_fct_training_d_348ba967cd9ea244ffed0d42fa55067e.sql
+00:09:23  
+00:09:23  Failure in test not_null_fct_matches_match_id (models\marts\schema.yml)
+00:09:23    Got 1 result, configured to fail if != 0
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_matches_match_id.sql
+00:09:23  
+00:09:23  Failure in test not_null_fct_training_dataset_away_team_id (models\marts\schema.yml)
+00:09:23    Runtime Error in test not_null_fct_training_dataset_away_team_id (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_away_team_id.sql
-05:15:15  
-05:15:15  Failure in test not_null_fct_training_dataset_home_team_id (models\marts\schema.yml)
-05:15:15    Runtime Error in test not_null_fct_training_dataset_home_team_id (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_away_team_id.sql
+00:09:23  
+00:09:23  Failure in test not_null_fct_training_dataset_home_team_id (models\marts\schema.yml)
+00:09:23    Runtime Error in test not_null_fct_training_dataset_home_team_id (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_home_team_id.sql
-05:15:15  
-05:15:15  Failure in test not_null_fct_training_dataset_match_date (models\marts\schema.yml)
-05:15:15    Runtime Error in test not_null_fct_training_dataset_match_date (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_home_team_id.sql
+00:09:23  
+00:09:23  Failure in test not_null_fct_training_dataset_match_date (models\marts\schema.yml)
+00:09:23    Runtime Error in test not_null_fct_training_dataset_match_date (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_date.sql
-05:15:15  
-05:15:15  Failure in test not_null_fct_training_dataset_match_id (models\marts\schema.yml)
-05:15:15    Runtime Error in test not_null_fct_training_dataset_match_id (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_date.sql
+00:09:23  
+00:09:23  Failure in test not_null_fct_training_dataset_match_id (models\marts\schema.yml)
+00:09:23    Runtime Error in test not_null_fct_training_dataset_match_id (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_id.sql
-05:15:15  
-05:15:15  Failure in test not_null_fct_training_dataset_match_result (models\marts\schema.yml)
-05:15:15    Runtime Error in test not_null_fct_training_dataset_match_result (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_id.sql
+00:09:23  
+00:09:23  Failure in test not_null_fct_training_dataset_match_result (models\marts\schema.yml)
+00:09:23    Runtime Error in test not_null_fct_training_dataset_match_result (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_result.sql
-05:15:15  
-05:15:15  Failure in test relationships_fct_matches_away_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
-05:15:15    Got 6 results, configured to fail if != 0
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_matches_away_team_id__team_id__ref_dim_teams_.sql
-05:15:15  
-05:15:15  Failure in test relationships_fct_matches_home_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
-05:15:15    Got 4 results, configured to fail if != 0
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_matches_home_team_id__team_id__ref_dim_teams_.sql
-05:15:15  
-05:15:15  Failure in test relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
-05:15:15    Runtime Error in test relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_fct_training_dataset_match_result.sql
+00:09:23  
+00:09:23  Failure in test relationships_fct_matches_away_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
+00:09:23    Got 6 results, configured to fail if != 0
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_matches_away_team_id__team_id__ref_dim_teams_.sql
+00:09:23  
+00:09:23  Failure in test relationships_fct_matches_home_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
+00:09:23    Got 4 results, configured to fail if != 0
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_matches_home_team_id__team_id__ref_dim_teams_.sql
+00:09:23  
+00:09:23  Failure in test relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
+00:09:23    Runtime Error in test relationships_fct_training_dataset_away_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_training_dat_c4aea5381d5cefde451f9a2a41444b4e.sql
-05:15:15  
-05:15:15  Failure in test relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
-05:15:15    Runtime Error in test relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_training_dat_c4aea5381d5cefde451f9a2a41444b4e.sql
+00:09:23  
+00:09:23  Failure in test relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
+00:09:23    Runtime Error in test relationships_fct_training_dataset_home_team_id__team_id__ref_dim_teams_ (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_training_dat_734288bbbf10230f974b69d87218fd1c.sql
-05:15:15  
-05:15:15  Failure in test unique_dim_teams_team_id (models\marts\schema.yml)
-05:15:15    Got 1 result, configured to fail if != 0
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_dim_teams_team_id.sql
-05:15:15  
-05:15:15  Failure in test relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_ (models\marts\schema.yml)
-05:15:15    Runtime Error in test relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_ (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_training_dat_734288bbbf10230f974b69d87218fd1c.sql
+00:09:23  
+00:09:23  Failure in test unique_dim_teams_team_id (models\marts\schema.yml)
+00:09:23    Got 1 result, configured to fail if != 0
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_dim_teams_team_id.sql
+00:09:23  
+00:09:23  Failure in test relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_ (models\marts\schema.yml)
+00:09:23    Runtime Error in test relationships_fct_training_dataset_match_id__match_id__ref_fct_matches_ (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_training_dat_bd7651a0015eb1ab89d0aea1482c1244.sql
-05:15:15  
-05:15:15  Failure in test unique_fct_matches_match_id (models\marts\schema.yml)
-05:15:15    Got 1 result, configured to fail if != 0
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_matches_match_id.sql
-05:15:15  
-05:15:15  Failure in test unique_fct_training_dataset_match_id (models\marts\schema.yml)
-05:15:15    Runtime Error in test unique_fct_training_dataset_match_id (models\marts\schema.yml)
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\relationships_fct_training_dat_bd7651a0015eb1ab89d0aea1482c1244.sql
+00:09:23  
+00:09:23  Failure in test unique_fct_matches_match_id (models\marts\schema.yml)
+00:09:23    Got 1 result, configured to fail if != 0
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_matches_match_id.sql
+00:09:23  
+00:09:23  Failure in test unique_fct_training_dataset_match_id (models\marts\schema.yml)
+00:09:23    Runtime Error in test unique_fct_training_dataset_match_id (models\marts\schema.yml)
   Binder Error: Catalog "dbt" does not exist!
-05:15:15  
-05:15:15    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_training_dataset_match_id.sql
-05:15:15  
-05:15:15  Done. PASS=13 WARN=0 ERROR=16 SKIP=0 NO-OP=0 TOTAL=29
+00:09:23  
+00:09:23    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_training_dataset_match_id.sql
+00:09:23  
+00:09:23  Done. PASS=13 WARN=0 ERROR=16 SKIP=0 NO-OP=0 TOTAL=29
 

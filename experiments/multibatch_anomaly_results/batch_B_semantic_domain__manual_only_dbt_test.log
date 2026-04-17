@@ -1,21 +1,21 @@
-05:15:28  Running with dbt=1.11.7
-05:15:28  Registered adapter: duckdb=1.10.1
-05:15:31  Found 4 models, 4 data tests, 1 source, 475 macros
-05:15:31  
-05:15:31  Concurrency: 4 threads (target='dev')
-05:15:31  
-05:15:31  1 of 4 START test not_null_dim_teams_team_id ................................... [RUN]
-05:15:31  2 of 4 START test not_null_fct_matches_match_id ................................ [RUN]
-05:15:31  3 of 4 START test unique_dim_teams_team_id ..................................... [RUN]
-05:15:31  4 of 4 START test unique_fct_matches_match_id .................................. [RUN]
-05:15:31  1 of 4 PASS not_null_dim_teams_team_id ......................................... [PASS in 0.12s]
-05:15:31  2 of 4 PASS not_null_fct_matches_match_id ...................................... [PASS in 0.12s]
-05:15:31  3 of 4 PASS unique_dim_teams_team_id ........................................... [PASS in 0.12s]
-05:15:31  4 of 4 PASS unique_fct_matches_match_id ........................................ [PASS in 0.12s]
-05:15:31  
-05:15:31  Finished running 4 data tests in 0 hours 0 minutes and 0.42 seconds (0.42s).
-05:15:31  
-05:15:31  Completed successfully
-05:15:31  
-05:15:31  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+00:09:33  Running with dbt=1.11.8
+00:09:33  Registered adapter: duckdb=1.10.1
+00:09:35  Found 4 models, 4 data tests, 1 source, 475 macros
+00:09:35  
+00:09:35  Concurrency: 4 threads (target='dev')
+00:09:35  
+00:09:35  1 of 4 START test not_null_dim_teams_team_id ................................... [RUN]
+00:09:35  2 of 4 START test not_null_fct_matches_match_id ................................ [RUN]
+00:09:35  3 of 4 START test unique_dim_teams_team_id ..................................... [RUN]
+00:09:35  4 of 4 START test unique_fct_matches_match_id .................................. [RUN]
+00:09:35  1 of 4 PASS not_null_dim_teams_team_id ......................................... [PASS in 0.10s]
+00:09:35  2 of 4 PASS not_null_fct_matches_match_id ...................................... [PASS in 0.10s]
+00:09:35  3 of 4 PASS unique_dim_teams_team_id ........................................... [PASS in 0.10s]
+00:09:35  4 of 4 PASS unique_fct_matches_match_id ........................................ [PASS in 0.10s]
+00:09:35  
+00:09:35  Finished running 4 data tests in 0 hours 0 minutes and 0.29 seconds (0.29s).
+00:09:35  
+00:09:35  Completed successfully
+00:09:35  
+00:09:35  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
 

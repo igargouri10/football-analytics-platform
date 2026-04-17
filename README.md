@@ -31,15 +31,18 @@ cd football-analytics-platform
 ```
 
 ### Create virtual environment
+
+> **Python 3.11 required.** Python 3.12+ is not yet compatible with `dbt-common`/`mashumaro`.
+
 **Windows PowerShell**
 ```powershell
-python -m venv .venv
+py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
 **macOS / Linux**
 ```bash
-python -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -54,10 +57,19 @@ Copy `.env.example` to `.env` and fill in your values.
 ### Configure dbt
 Copy `.dbt/profiles.example.yml` into your local dbt profiles directory and customize it.
 
-### Run local workflow
+### Start Airflow (optional — Docker required)
 ```bash
-dbt run --project-dir dbt_project --profiles-dir "$HOME/.dbt"
-dbt test --project-dir dbt_project --profiles-dir "$HOME/.dbt"
+docker compose up -d
+```
+The DAG `football_multi_layer_validation` orchestrates the full pipeline.
+All experiments below can also be run standalone without Airflow.
+
+### Run local dbt workflow
+```bash
+cd dbt_project
+dbt run --profiles-dir "$HOME/.dbt"
+dbt test --profiles-dir "$HOME/.dbt"
+cd ..
 ```
 
 ### Generate and merge LLM tests

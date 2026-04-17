@@ -300,6 +300,182 @@
         "merged_schema_file": "C:\\Users\\ismail.gargouri\\Desktop\\football_analytics_platform\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
         "merged_schema_test_count": 16
       }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-15T02:18:02.720417+00:00",
+      "end_time_utc": "2026-04-15T02:18:23.431937+00:00",
+      "duration_seconds": 20.712,
+      "status": "success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 3,
+        "failed_count": 0,
+        "total_generated_items": 23,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 23
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-15T02:46:11.354892+00:00",
+      "end_time_utc": "2026-04-15T02:46:22.726854+00:00",
+      "duration_seconds": 11.372,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-15T02:49:36.831293+00:00",
+      "end_time_utc": "2026-04-15T02:49:45.622668+00:00",
+      "duration_seconds": 8.791,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-15T02:51:36.460174+00:00",
+      "end_time_utc": "2026-04-15T02:51:43.502489+00:00",
+      "duration_seconds": 7.042,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-15T02:54:17.507107+00:00",
+      "end_time_utc": "2026-04-15T02:54:26.254032+00:00",
+      "duration_seconds": 8.747,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-15T02:56:19.598022+00:00",
+      "end_time_utc": "2026-04-15T02:56:24.535958+00:00",
+      "duration_seconds": 4.938,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 0,
+        "failed_count": 3,
+        "total_generated_items": 0,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": null,
+        "merged_schema_test_count": null
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-16T00:04:38.634068+00:00",
+      "end_time_utc": "2026-04-16T00:04:47.001107+00:00",
+      "duration_seconds": 8.367,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-16T00:05:42.560472+00:00",
+      "end_time_utc": "2026-04-16T00:05:49.324387+00:00",
+      "duration_seconds": 6.764,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-16T00:06:46.829066+00:00",
+      "end_time_utc": "2026-04-16T00:06:52.370358+00:00",
+      "duration_seconds": 5.541,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-16T00:07:53.651366+00:00",
+      "end_time_utc": "2026-04-16T00:08:01.844685+00:00",
+      "duration_seconds": 8.193,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
+    },
+    {
+      "stage_name": "generate_llm_tests",
+      "start_time_utc": "2026-04-16T00:09:01.048000+00:00",
+      "end_time_utc": "2026-04-16T00:09:07.046991+00:00",
+      "duration_seconds": 5.999,
+      "status": "partial_success",
+      "metadata": {
+        "total_models": 3,
+        "success_count": 2,
+        "failed_count": 1,
+        "total_generated_items": 16,
+        "summary_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\generated_tests\\generation_summary.json",
+        "merged_schema_file": "C:\\Users\\igarg\\Documents\\CSCI 565\\football-analytics-platform\\dbt_project\\schema_versions\\schema.llm_merged.yml",
+        "merged_schema_test_count": 16
+      }
     }
   ]
 }

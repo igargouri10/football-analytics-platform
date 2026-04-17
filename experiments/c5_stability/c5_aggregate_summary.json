@@ -22,40 +22,40 @@
       "max": 16
     },
     "duration_seconds_stats": {
-      "mean": 81.821,
-      "std": 2.0479,
-      "min": 78.273,
-      "max": 84.609
+      "mean": 55.9072,
+      "std": 9.2725,
+      "min": 50.153,
+      "max": 74.398
     },
     "generation_total_stats": {
-      "mean": null,
-      "std": null,
-      "min": null,
-      "max": null
+      "mean": 0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
     },
     "useful_count_stats": {
-      "mean": 8,
+      "mean": 0,
       "std": 0.0,
-      "min": 8,
-      "max": 8
+      "min": 0,
+      "max": 0
     },
     "redundant_count_stats": {
-      "mean": 4,
+      "mean": 0,
       "std": 0.0,
-      "min": 4,
-      "max": 4
+      "min": 0,
+      "max": 0
     },
     "low_value_count_stats": {
-      "mean": 9,
+      "mean": 0,
       "std": 0.0,
-      "min": 9,
-      "max": 9
+      "min": 0,
+      "max": 0
     },
     "invalid_count_stats": {
-      "mean": 2,
+      "mean": 0,
       "std": 0.0,
-      "min": 2,
-      "max": 2
+      "min": 0,
+      "max": 0
     }
   },
   "fresh_generation": {
@@ -81,10 +81,10 @@
       "max": 16
     },
     "duration_seconds_stats": {
-      "mean": 407.0836,
-      "std": 623.4559,
-      "min": 91.216,
-      "max": 1653.963
+      "mean": 65.4418,
+      "std": 1.4635,
+      "min": 64.034,
+      "max": 67.853
     },
     "generation_total_stats": {
       "mean": 16,

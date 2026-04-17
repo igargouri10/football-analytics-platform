@@ -1,36 +1,36 @@
-05:15:52  Running with dbt=1.11.7
-05:15:53  Registered adapter: duckdb=1.10.1
-05:15:55  Found 4 models, 4 data tests, 1 source, 475 macros
-05:15:55  
-05:15:55  Concurrency: 4 threads (target='dev')
-05:15:55  
-05:15:55  1 of 4 START test not_null_dim_teams_team_id ................................... [RUN]
-05:15:55  2 of 4 START test not_null_fct_matches_match_id ................................ [RUN]
-05:15:55  3 of 4 START test unique_dim_teams_team_id ..................................... [RUN]
-05:15:55  4 of 4 START test unique_fct_matches_match_id .................................. [RUN]
-05:15:55  1 of 4 FAIL 1 not_null_dim_teams_team_id ....................................... [FAIL 1 in 0.11s]
-05:15:55  2 of 4 PASS not_null_fct_matches_match_id ...................................... [PASS in 0.12s]
-05:15:55  3 of 4 FAIL 1 unique_dim_teams_team_id ......................................... [FAIL 1 in 0.12s]
-05:15:55  4 of 4 FAIL 1 unique_fct_matches_match_id ...................................... [FAIL 1 in 0.12s]
-05:15:55  
-05:15:55  Finished running 4 data tests in 0 hours 0 minutes and 0.40 seconds (0.40s).
-05:15:55  
-05:15:55  Completed with 3 errors, 0 partial successes, and 0 warnings:
-05:15:55  
-05:15:55  Failure in test not_null_dim_teams_team_id (models\marts\schema.yml)
-05:15:55    Got 1 result, configured to fail if != 0
-05:15:55  
-05:15:55    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_dim_teams_team_id.sql
-05:15:55  
-05:15:55  Failure in test unique_dim_teams_team_id (models\marts\schema.yml)
-05:15:55    Got 1 result, configured to fail if != 0
-05:15:55  
-05:15:55    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_dim_teams_team_id.sql
-05:15:55  
-05:15:55  Failure in test unique_fct_matches_match_id (models\marts\schema.yml)
-05:15:55    Got 1 result, configured to fail if != 0
-05:15:55  
-05:15:55    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_matches_match_id.sql
-05:15:55  
-05:15:55  Done. PASS=1 WARN=0 ERROR=3 SKIP=0 NO-OP=0 TOTAL=4
+00:09:50  Running with dbt=1.11.8
+00:09:50  Registered adapter: duckdb=1.10.1
+00:09:52  Found 4 models, 4 data tests, 1 source, 475 macros
+00:09:52  
+00:09:52  Concurrency: 4 threads (target='dev')
+00:09:52  
+00:09:52  1 of 4 START test not_null_dim_teams_team_id ................................... [RUN]
+00:09:52  2 of 4 START test not_null_fct_matches_match_id ................................ [RUN]
+00:09:52  3 of 4 START test unique_dim_teams_team_id ..................................... [RUN]
+00:09:52  4 of 4 START test unique_fct_matches_match_id .................................. [RUN]
+00:09:52  2 of 4 PASS not_null_fct_matches_match_id ...................................... [PASS in 0.09s]
+00:09:52  1 of 4 FAIL 1 not_null_dim_teams_team_id ....................................... [FAIL 1 in 0.10s]
+00:09:52  4 of 4 FAIL 1 unique_fct_matches_match_id ...................................... [FAIL 1 in 0.10s]
+00:09:52  3 of 4 FAIL 1 unique_dim_teams_team_id ......................................... [FAIL 1 in 0.10s]
+00:09:52  
+00:09:52  Finished running 4 data tests in 0 hours 0 minutes and 0.29 seconds (0.29s).
+00:09:52  
+00:09:52  Completed with 3 errors, 0 partial successes, and 0 warnings:
+00:09:52  
+00:09:52  Failure in test not_null_dim_teams_team_id (models\marts\schema.yml)
+00:09:52    Got 1 result, configured to fail if != 0
+00:09:52  
+00:09:52    compiled code at target\compiled\football_analytics\models\marts\schema.yml\not_null_dim_teams_team_id.sql
+00:09:52  
+00:09:52  Failure in test unique_fct_matches_match_id (models\marts\schema.yml)
+00:09:52    Got 1 result, configured to fail if != 0
+00:09:52  
+00:09:52    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_fct_matches_match_id.sql
+00:09:52  
+00:09:52  Failure in test unique_dim_teams_team_id (models\marts\schema.yml)
+00:09:52    Got 1 result, configured to fail if != 0
+00:09:52  
+00:09:52    compiled code at target\compiled\football_analytics\models\marts\schema.yml\unique_dim_teams_team_id.sql
+00:09:52  
+00:09:52  Done. PASS=1 WARN=0 ERROR=3 SKIP=0 NO-OP=0 TOTAL=4
 
