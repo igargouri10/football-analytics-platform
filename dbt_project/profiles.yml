@@ -1,4 +1,4 @@
-football_analytics_platform:
+football_analytics:
   target: dev
   outputs:
     # Target for local development with DuckDB

@@ -14,7 +14,7 @@ API_URL = "https://www.thesportsdb.com/api/v1/json/3/eventsseason.php?id=4328&s=
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 # Use variable names consistent with the rest of the project
-S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
+S3_BUCKET_NAME = os.getenv("AWS_S3_BUCKET_NAME")
 AWS_REGION = os.getenv("AWS_REGION")
 
 # Initialize the S3 client
